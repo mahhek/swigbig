@@ -1,0 +1,46 @@
+<div class="AddService AddFacebook">
+  <a href="facebook">
+    <img width="130" height="60" alt="managefriends-add-facebook" src="https://d3t9wmuxo47dud.cloudfront.net/img/managefriends-add-facebook-666952d0a3f0ce3b75c7628e8a68a681.png" />
+  </a>
+</div>
+
+<!-- Gmail -->
+<div class="AddService AddGmail">
+  <a href="gmail">
+    <img width="130" height="60" alt="managefriends-add-gmail" src="https://d3t9wmuxo47dud.cloudfront.net/img/managefriends-add-gmail-6a20fe7ba5b77b957d311ee928ec83c0.png">
+  </a>
+</div>
+
+<!-- twitter -->
+<div class="AddService AddTwitter">
+  <a href="twitter">
+    <img width="130" height="60" alt="managefriends-add-twitter" src="https://d3t9wmuxo47dud.cloudfront.net/img/managefriends-add-twitter-5747cb5a357bd7f1a6a4b9a0bae52801.png">
+  </a>
+</div>
+<!-- yahoo -->
+<div class="AddService AddYahoo">
+  <a href="yahoo">
+    <img width="130" height="60" alt="managefriends-add-yahoo" src="https://d3t9wmuxo47dud.cloudfront.net/img/managefriends-add-yahoo-b4da0d1b19f7c8c1e501212f1ea259a6.png">
+  </a>
+</div>
+
+<h2>Friends not on swigbig? Invite them!</h2>
+<p>Invite your friends to foursquare <a href="/dashboard/invite/">via Email</a> or <a href="#" id="invite_fb_friends">Facebook</a>.</p>
+
+
+<script src="http://connect.facebook.net/en_US/all.js"></script>
+<script>
+  $(function(){
+    $("a#invite_fb_friends").click(function(){
+      FB.init({
+        appId: '277531728941437',
+        status: true,
+        cookie: false,
+        // xfbml: true
+      });
+      FB.ui({
+        method: 'apprequests',
+        message: '<%=current_user.name %> has invite you to SwigBig'});
+    });
+  });
+</script>

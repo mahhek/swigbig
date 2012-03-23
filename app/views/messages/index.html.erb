@@ -1,0 +1,25 @@
+<h3>Messages</h3>
+
+<% if @messages.empty? %>
+  You don't have any messages.
+<% else %>
+  <table>
+    <tr>
+      <th>From</th>
+      <th>Subject</th>
+      <th>Content</th>
+      <th>Action</th>
+    </tr>
+  <% @messages.each do |message| %>
+    <tr>
+      <td><%=h message.from.name %></td>
+      <td><%=h message.topic %></td>
+      <td><%=h message.body.truncate(30) %></td>
+      <td><%= link_to "Show", message_path(message) %> |
+      <%= link_to "Delete", message_path(message), :method => :delete, :confirm => "Are you sure?" %></td>
+    </tr>
+  <% end %>
+  </table>
+<% end %>
+
+<%= will_paginate @messages %>

@@ -1,0 +1,18 @@
+<p>
+  <b>Name:</b>
+  <%=h @logo.name %>
+</p>
+
+<p>
+  <b>Status:</b>
+  <%= @logo.active? ? "In Use" : "Inactive" %>
+</p>
+
+<p>
+  <b>Image:</b>
+  <%= image_tag @logo.image.url(:medium) %>
+</p>
+
+
+<%= link_to 'Edit', edit_admins_logo_path(@logo) %> |
+<%= link_to 'Back', admins_logos_path %>

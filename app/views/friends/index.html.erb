@@ -1,0 +1,90 @@
+<h3>Manage Friends</h3>
+<%= link_to "Invite Friends", "#", :onclick => "$('#invite-friend').toggle();" %>
+<%#= render :partial => 'invite_friends' %>
+
+<h4>Your Friends (<%= @num_of_friends %>)</h4>
+<% if @num_of_friends <= 0 %>
+  You don't have any friends.
+<% else %>
+  <table>
+    <tr>
+      <th>Avatar</th>
+      <th>Name</th>
+      <th>Action</th>
+    </tr>
+    <% @friends.each do |friend| %>
+      <tr>
+        <td><%= image_tag friend.avatar.url(:thumb) %></td>
+        <td><%= link_to h(friend.name), user_path(friend) %></td>
+        <td>
+          <%= link_to "Remove", friend_path(friend), :method => :delete, :confirm => "Are you sure?" %>
+        </td>
+      </tr>
+    <% end %>
+  </table>
+<% end %>
+
+<h4>Requests (<%= @num_of_friend_requests %>)</h4>
+<% if @num_of_friend_requests <= 0 %>
+  You don't have any friend requests.
+<% else %>
+  <table>
+    <tr>
+      <th>Avatar</th>
+      <th>Name</th>
+      <th>Action</th>
+    </tr>
+    <% @pending_invited_by.each do |friend| %>
+      <tr>
+        <td><%= image_tag friend.avatar.url(:thumb) %></td>
+        <td><%= link_to h(friend.name), user_path(friend) %></td>
+        <td>
+          <%= link_to "Confirm", approve_friend_path(friend), :method => :post %>
+        </td>
+      </tr>
+    <% end %>
+  </table>
+<% end %>
+
+<h4>Pending (<%= @numb_pending_invited %>)</h4>
+<% if @numb_pending_invited <= 0 %>
+  You don't have any pending friends requested.
+<% else %>
+  <table>
+    <tr>
+      <th>Avatar</th>
+      <th>Name</th>
+      <th>Action</th>
+    </tr>
+    <% @pending_invited.each do |friend| %>
+      <tr>
+        <td><%= image_tag friend.avatar.url(:thumb) %></td>
+        <td><%= link_to h(friend.name), user_path(friend) %></td>
+        <td>
+          <%= link_to "Cancel", friend_path(friend), :method => :delete, :confirm => "Are you sure?" %>
+        </td>
+      </tr>
+    <% end %>
+  </table>
+<% end %>
+
+<h4>Users</h4>
+<table>
+  <tr>
+    <th>Avatar</th>
+    <th>Name</th>
+    <th>Action</th>
+  </tr>
+  <% @users.each do |user| %>
+    <tr>
+      <td><%= image_tag user.avatar.url(:thumb) %></td>
+      <td><%= link_to h(user.name), user_path(user) %></td>
+      <td>
+        <%= link_to "Add as friend", friend_path(user), :method => :put %>
+      </td>
+    </tr>
+  <% end %>
+</table>
+
+<%= will_paginate(@users) %>
+

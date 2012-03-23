@@ -1,0 +1,23 @@
+<h1>Listing Coupons</h1>
+
+<table>
+  <tr>
+    <th>Code</th>
+    <th>Expire Date</th>
+    <th></th>
+  </tr>
+
+<% @coupons.each do |coupon| %>
+  <tr>
+    <td><%=h coupon.code %></td>
+    <td><%= coupon.expire_date.strftime("%d %B %Y") %></td>
+    <td><%= link_to 'Show', admins_coupon_path(coupon) %> |
+    <%= link_to 'Edit', edit_admins_coupon_path(coupon) %> |
+    <%= link_to 'Destroy', admins_coupon_path(coupon), confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Deal', new_admins_coupon_path %>

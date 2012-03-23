@@ -1,0 +1,10 @@
+[core]
+	repositoryformatversion = 0
+	filemode = true
+	bare = false
+	logallrefupdates = true
+	ignorecase = true
+[remote "origin"]
+	url = ssh://git@41studio.repositoryhosting.com/41studio/swigbig.git
+	fetch = +refs/heads/*:refs/remotes/origin/*
+	push = refs/heads/master:refs/heads/master

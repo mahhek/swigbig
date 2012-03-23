@@ -1,0 +1,34 @@
+<h3>Credit Card</h3>
+
+<p>
+  <b>First name:</b>
+  <%= @credit_card.first_name rescue "" %>
+</p>
+
+<p>
+  <b>Last name:</b>
+  <%= @credit_card.last_name rescue "" %>
+</p>
+
+<p>
+  <b>Number:</b>
+  <%= @credit_card.number rescue "" %>
+</p>
+
+<p>
+  <b>Month:</b>
+  <%= @credit_card.month rescue "" %>
+</p>
+
+<p>
+  <b>Year:</b>
+  <%= @credit_card.year rescue "" %>
+</p>
+
+<p>
+  <b>Cvv:</b>
+  <%= @credit_card.cvv2 rescue "" %>
+</p>
+
+
+<%= link_to 'Edit', edit_bars_credit_cards_path %>

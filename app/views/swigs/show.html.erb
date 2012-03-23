@@ -1,0 +1,22 @@
+<p>
+  <b>Bar Name:</b>
+  <%= show_field_value(@swig.bar, "name") %>
+</p>
+
+<p>
+  <b>Address:</b>
+  <%= show_field_value(@swig.bar, "address") %>
+</p>
+
+<p>
+  <b>ZIP Code:</b>
+  <%= show_field_value(@swig.bar, "zip_code") %>
+</p>
+
+<p>
+  <b>Swigged Count:</b>
+  <%= @swig.reward_point %>
+</p>
+
+
+<%= link_to 'Back', top_ten_swigs_swigs_path %>

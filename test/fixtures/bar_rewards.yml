@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/Fixtures.html
+
+one:
+  bar_id: 1
+  reward_id: 1
+
+two:
+  bar_id: 1
+  reward_id: 1

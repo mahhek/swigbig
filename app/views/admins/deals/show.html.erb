@@ -1,0 +1,23 @@
+<p>
+  <b>Name:</b>
+  <%= @deal.name %>
+</p>
+
+<p>
+  <b>Tier:</b>
+  <%= @deal.tier %>
+</p>
+
+<p>
+  <b>Tipping point:</b>
+  <%= @deal.tipping_points %>
+</p>
+
+<p>
+  <b>Day of week:</b>
+  <%= @deal.day_of_week %>
+</p>
+
+
+<%= link_to 'Edit', edit_admins_deal_path(@deal) %> |
+<%= link_to 'Back', admins_deals_path %>

@@ -1,0 +1,28 @@
+  <% title "Sign Up - Step 2" %>
+
+  <div><%= f.label :name %><br />
+  <%= f.text_field :name, :value => social_user %></div>
+
+  <div><%= f.label :phone_number %><br />
+  <%= f.text_field :phone_number %></div>
+
+  <div><%= f.label :address %><br />
+  <%= f.text_field :address %></div>
+
+  <div><%= f.label :zip_code %><br />
+  <%= f.text_field :zip_code %></div>
+
+  <div><%= f.label :city %><br />
+  <%= f.text_field :city %></div>
+  <%= f.hidden_field :service_uid, :value => service_uid %>
+
+  <div><%= f.label :country %><br />
+  <%= f.select :country_abbr, Carmen.countries, {:selected => "US"}, {:disabled => true} %> <i>(for now we only support United States)</i></div>
+
+  <%= f.hidden_field :country_abbr, {:value => "US"} %>
+
+  <div><%= f.label :state %><br />
+  <%= f.select :state_abbr, Carmen::states('US') %></div>
+
+  <div><%= f.label :logo %><br />
+  <%= f.file_field :logo %></div>

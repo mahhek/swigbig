@@ -1,0 +1,19 @@
+<h1>Editing Reward</h1>
+
+<%- unless @default_reward %>
+  <%= render 'form', :url => bars_reward_path(@reward), :object => @reward, :method => :put %>
+<%- else %>
+  <%= render 'form', :url => update_from_default_reward_bars_reward_path(current_bar.id, @reward.id), :object => @new_reward, :method => :put %>
+<%- end %>
+
+<br />
+<h1>Editing Reward From Default Rewards</h1>
+
+<%- if @default_reward %>
+  <%= render 'form_reward_list', :url => update_from_default_reward_bars_reward_path(current_bar.id, @reward.id), :object => @bar_reward, :method => :put %>
+<%- else %>
+  <%= render 'form_reward_list', :url => update_from_default_reward_bars_reward_path(current_bar.id, @reward.id, :new_reward => true), :object => @bar_reward, :method => :put %>
+<%- end %>
+
+<%= link_to 'Show', bars_reward_path(@reward) %> |
+<%= link_to 'Back', bars_rewards_path %>

@@ -1,0 +1,5 @@
+<% img_url = @current_logo.nil? ? "paperclip_missing/logo-default.jpg" : @current_logo.image.url(:thumb) %>
+<% link_url = admin_signed_in? ? admin_root_path : root_path %>
+<%= link_to image_tag(img_url), link_url %>
+<br /><br />
+<p style="font-weight: bold;"><%=h @current_slogan.nil? ? "" : @current_slogan.title %></p>

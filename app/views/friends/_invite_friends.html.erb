@@ -1,0 +1,27 @@
+<div id="invite-friend" style="display:none;">
+  Google  
+  Twitter
+
+<%= render :partial => 'friend_list' %>
+  <div id="fb-root"></div>
+<a href="#" id="invite_fb_friends">Facebook</a>
+<script src="http://connect.facebook.net/en_US/all.js"></script>
+<script>
+  $(function(){
+    $("a#invite_fb_friends").click(function(){
+      FB.init({
+        appId: '277531728941437',
+        status: true,
+        cookie: false,
+        // xfbml: true
+      });
+      FB.ui({
+        method: 'apprequests',
+        message: '<%=current_user.name %> has invite you to SwigBig'});
+    });
+  });
+</script>
+</div>
+
+
+

@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/Fixtures.html
+
+one:
+  user_id: 1
+  bar_id: 1
+  total_invited: 1
+  total_attendee: 1
+
+two:
+  user_id: 1
+  bar_id: 1
+  total_invited: 1
+  total_attendee: 1

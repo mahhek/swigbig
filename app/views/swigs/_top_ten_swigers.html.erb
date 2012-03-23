@@ -1,0 +1,24 @@
+<ul style="overflow: hidden; height: 570px;" class="drink-specials">
+  <%- @top_ten_swigs.each do |swig| %>
+    <li style="margin-top: 0pt;" class="wine">
+      <a class="deal_info" href="#"><%= swig.user.full_name %> has been checked in at <%= swig.bar.name %></a>
+      <a class="deal_info_right" style="float: right;" href="#">
+        <img src="/images/pin.png" style="margin-right: 10px;">Lorem ipsum.
+      </a>
+      <span class="deal_venue">
+        at <%= swig.updated_at.strftime("%H:%M") %> o'clock
+      </span>
+    </li>
+  <%- end %>
+</ul>
+<script type="text/javascript">
+  $(function () {
+    $('.drink-specials').totemticker({
+      row_height: '57px',
+      speed: 400,
+      interval: 2000,
+      max_items: 10,
+      direction: 'down'
+    });
+  });
+</script>

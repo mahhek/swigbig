@@ -1,0 +1,48 @@
+<h1>Unclaimed Rewards</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Description</th>
+    <th>Bar Name</th>
+    <th>Reward Point</th>
+    <th>Total Unclaimed</th>
+    <th></th>
+  </tr>
+
+  <% @unclaimed_rewards.each do |unclaimed_reward| %>
+    <tr>
+      <td><%= show_field_value(unclaimed_reward.reward, "name") %></td>
+      <td><%= show_field_value(unclaimed_reward.reward, "description") %></td>
+      <td><%= show_field_value(unclaimed_reward.swig.bar, "name") if unclaimed_reward.swig %></td>
+      <td><%= show_field_value(unclaimed_reward.reward, "reward_point") %></td>
+      <td><%= unclaimed_reward.total - unclaimed_reward.earned %></td>
+      <td><%= link_to 'Show', user_reward_path(unclaimed_reward.id, :claimed => false) %></td>
+    </tr>
+  <% end %>
+</table>
+
+<br />
+<h1>Earned Rewards</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Description</th>
+    <th>Bar Name</th>
+    <th>Reward Point</th>
+    <th>Total Earned</th>
+    <th></th>
+  </tr>
+
+  <% @earned_rewards.each do |earned_reward| %>
+    <tr>
+      <td><%= show_field_value(earned_reward.reward, "name") %></td>
+      <td><%= show_field_value(earned_reward.reward, "description") %></td>
+      <td><%= show_field_value(earned_reward.swig.bar, "name") if earned_reward.swig %></td>
+      <td><%= show_field_value(earned_reward.reward, "reward_point") %></td>
+      <td><%= earned_reward.earned %></td>
+      <td><%= link_to 'Show', user_reward_path(earned_reward.id, :claimed => true) %></td>
+    </tr>
+  <% end %>
+</table>

@@ -1,0 +1,14 @@
+<div id="sign-panel">
+  <h2>Sign up as User</h2>
+
+  <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name), :multipart => true) do |f| %>
+    <%= devise_error_messages! %>
+
+    <%= render "users/shared/#{resource.current_step}_step", :f => f %>
+
+    <div class="clear"></div>
+    <br/>
+    <%= f.submit "Get Swigging", :class => "button button_small" %>
+    <div class="clear"></div>
+  <% end %>
+</div>

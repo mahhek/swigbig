@@ -1,0 +1,11 @@
+<h1>Send Message</h1>
+
+<%= form_for :message, :url => messages_path do |f| %>
+  <p>To : <%= f.text_field :to, :value => @receiver.name, :disabled => true %></p>
+  <%= hidden_field_tag :id, @receiver.id %>
+
+  <p>Subject : <%= f.text_field :topic %></p>
+  <p>Message : <%= f.text_area :body %></p>
+
+  <%= f.submit "Send" %>
+<% end %>

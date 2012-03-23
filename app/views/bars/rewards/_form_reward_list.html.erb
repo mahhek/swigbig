@@ -1,0 +1,13 @@
+<%= form_for(object, :url => url, :method => method) do |f| %>
+
+  <%= f.error_messages %>
+
+  <div class="field">
+    <%= f.label :reward_id %><br />
+    <%= f.select :reward_id, options_from_collection_for_select(@default_rewards, "id", "name", @bar_reward.reward_id), :include_blank => true %>
+  </div>
+  <div class="actions">
+    <%= f.submit "Create Reward" %>
+  </div>
+<% end %>
+

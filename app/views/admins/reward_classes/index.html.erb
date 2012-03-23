@@ -1,0 +1,21 @@
+<% title "Listing Reward Classes" %>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th></th>
+  </tr>
+
+<% @reward_classes.each do |reward_class| %>
+  <tr>
+    <td><%= reward_class.name %></td>
+    <td><%= link_to 'Show', admins_reward_class_path(reward_class) %> |
+    <%= link_to 'Edit', edit_admins_reward_class_path(reward_class) %> |
+    <%= link_to 'Destroy', admins_reward_class_path(reward_class), confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Reward', new_admins_reward_class_path %>

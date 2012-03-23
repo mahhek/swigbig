@@ -1,0 +1,19 @@
+<h1>Editing Deal</h1>
+
+<%- unless @default_deal %>
+  <%= render 'form', :url => bars_deal_path(@deal), :object => @deal, :method => :put %>
+<%- else %>
+  <%= render 'form', :url => update_from_default_deal_bars_deal_path(current_bar.id, @deal.id), :object => @new_deal, :method => :put %>
+<%- end %>
+
+<br />
+<h1>Editing Deal From Default Deals</h1>
+
+<%- if @default_deal %>
+  <%= render 'form_deal_list', :url => update_from_default_deal_bars_deal_path(current_bar.id, @deal.id), :object => @bar_deal, :method => :put %>
+<%- else %>
+  <%= render 'form_deal_list', :url => update_from_default_deal_bars_deal_path(current_bar.id, @deal.id, :new_deal => true), :object => @bar_deal, :method => :put %>
+<%- end %>
+
+<%= link_to 'Show', bars_deal_path(@deal) %> |
+<%= link_to 'Back', bars_deals_path %>

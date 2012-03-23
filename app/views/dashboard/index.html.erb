@@ -1,0 +1,29 @@
+<%- unless (reward_notifies = is_user_have_popularity_reward_not_notification_yet?(current_user)).blank? %>
+  <h3>You've got popularity rewards below:</h3>
+  <ul>
+    <%- reward_notifies.each do |notify| %>
+      <li><%= notify.description %></li>
+    <%- end %>
+  </ul>
+  <%- already_notified(reward_notifies) %>
+<%- end %>
+
+<iframe scrolling="no" frameborder="0" src="https://www.facebook.com/plugins/facepile.php?app_id=277531728941437&amp;amp;width=400&amp;amp;max_rows=1" style="border: medium none; overflow: hidden; width: 400px; height: 70px;" allowtransparency="true"></iframe>
+<h1>Hi <%=h current_user.name %>, welcome back!</h1>
+
+<%= form_for @new_status, :method => :post do |f| %>
+  <p>What are you doing : <%= f.text_field :body %> <%= f.submit "Save" %></p>
+<% end %>
+
+<ul>
+  <% @status.each do |status| %>
+    <li><%=h status.body %></li>
+    <ul>
+      <% comments_for(status).each do |c| %>
+        <li><%=h c.comment %></li>
+      <% end %>
+    </ul>
+  <% end %>
+</ul>
+
+<%= link_to "Get more friends", get_more_friends_url  %>

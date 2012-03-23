@@ -1,0 +1,12 @@
+<p>
+  <b>Title:</b>
+  <%=h @slogan.title %>
+</p>
+
+<p>
+  <b>Status:</b>
+  <%= @slogan.active? ? "In Use" : "Inactive" %>
+</p>
+
+<%= link_to 'Edit', edit_admins_slogan_path(@slogan) %> |
+<%= link_to 'Back', admins_slogans_path %>

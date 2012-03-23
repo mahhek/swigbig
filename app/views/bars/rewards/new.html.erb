@@ -1,0 +1,24 @@
+<div style="display: none;" id="new_reward">
+  <%= render 'form', :url => bars_rewards_path, :object => @reward, :method => :post %>
+
+  <div style="display: none;">
+    <h3>New Reward From Default Rewards</h3>
+    <%= render 'form_reward_list', :url => create_from_default_reward_bars_reward_path(current_bar.id), :object => @bar_reward, :method => :post %>
+    <%= link_to 'Back', bars_rewards_path %>
+  </div>
+</div>
+<div id="type" style="display: block;">
+  <%= render :partial => "reward_type" %>
+</div>
+<%= link_to 'Back', bars_rewards_path %>
+
+
+<script type="text/javascript">
+  function get_type(id)
+  {
+  $("#deal_deal_type_id").val(id);
+  $("#type").hide();
+  $("#new_reward").show();
+  };
+
+</script>

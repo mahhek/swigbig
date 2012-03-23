@@ -1,0 +1,40 @@
+<h1>Listing Deals</h1>
+<!--
+<%#*<table>%>
+<%#*<tr>%>
+<%#*<th>Name</th>%>
+<%#*<th>Tier</th>%>
+<%#*<th>Tipping point</th>%>
+<%#*<th>Day of week</th>%>
+<%#*<th></th>%>
+<%#*</tr>%>
+
+<%# @bar_deals.each do |bar_deal| %>
+<%#*<tr>%>
+<%#*<td><%= bar_deal.deal.name %></td>%>
+<%#*<td><%= bar_deal.deal.tier %></td>%>
+<%#*<td><%= bar_deal.deal.tipping_points %></td>%>
+<%#*<td><%= bar_deal.deal.day_of_week %></td>%>
+<%#*<td><%= link_to 'Show', bars_deal_path(bar_deal.deal) %> |%>
+<%#= link_to 'Edit', edit_bars_deal_path(bar_deal.deal) %> |
+<%#= link_to 'Destroy', bars_deal_path(bar_deal.deal), confirm: 'Are you sure?', method: :delete %></td>
+<%#*</tr>%>
+<%# end %>
+<%#*</table>%> -->
+
+<div>
+  <%= link_to "Monday", "/find_deals?day=1", :remote => true %>
+  <%= link_to "Tuesday", "/find_deals?day=2", :remote => true %>
+  <%= link_to "Wednesday", "/find_deals?day=3", :remote => true %>
+  <%= link_to "Thursday", "/find_deals?day=4", :remote => true %>
+  <%= link_to "Friday","/find_deals?day=5", :remote => true %>
+  <%= link_to "Saturday", "/find_deals?day=6", :remote => true %>
+  <%= link_to "Sunday", "/find_deals?day=7", :remote => true %>
+</div>
+
+<div id="data">
+  <%=render :partial => "/bars/deals/find_deals"%>
+</div>
+<br />
+
+<%#= link_to 'New Deal', new_bars_deal_path %>

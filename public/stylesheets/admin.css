@@ -1,0 +1,63 @@
+.admin-content{
+    margin: 0 auto;
+    width: 800px;
+}
+.admin-top{
+    background: url("/images/admin-panel-top.png");
+    width: 799px;
+    height:19px;
+    position: relative;
+    z-index: 2;
+}
+.admin-mid{
+    background: url("/images/admin-panel-mid.png");
+    width: 799px;
+    height:auto;
+    position: relative;
+    z-index: 2;
+}
+.admin-mid .admin-panel{
+    margin-left: 25px;
+    width: 765px;
+    position: relative;
+    z-index: 2;
+}
+.admin-mid .admin-panel a{
+    -moz-border-radius: 3px 3px 3px 3px;
+    -webkit-border-radius: 3px 3px 3px 3px;
+    background: url(/images/button-gray.png);
+    color: #222222;
+    font-size: 14px;
+    font-family: Arial;
+    padding: 6px 10px;
+    position: relative;
+    z-index:3;
+}
+.admin-mid .admin-panel a:hover{
+    background: none repeat scroll 0 0 #E3E7EC;
+    position: relative;
+    z-index:7;
+}
+.admin-mid .admin-panel a.active{
+    background: none repeat scroll 0 0 #E3E7EC;
+    position: relative;
+    z-index: 7;
+}
+.admin-bot{
+    background: url("/images/admin-panel-bot.png");
+    width: 799px;
+    height: 19px;
+    position: relative;
+    z-index: 2;
+    float: left;
+    margin-top: -13px;
+}
+.admin-mid .container{
+    background: none repeat scroll 0 0 #E3E7EC;
+    border-top: 3px solid #747777;
+    margin-left: 15px;
+    min-height: 200px;
+    width: 765px;
+    position: relative;
+    z-index:2;
+}

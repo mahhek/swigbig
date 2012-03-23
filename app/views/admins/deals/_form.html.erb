@@ -1,0 +1,23 @@
+<%= form_for(@deal, :url => url) do |f| %>
+  <%= f.error_messages %>
+
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :tier %><br />
+    <%= f.select :tier, @tiers %>
+  </div>
+  <div class="field">
+    <%= f.label :tipping_points %><br />
+    <%= f.select :tipping_points, @tipping_points %>
+  </div>
+  <div class="field">
+    <%= f.label :day_of_week %><br />
+    <%= f.select :day_of_week, @days_of_week %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

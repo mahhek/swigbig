@@ -1,0 +1,27 @@
+<% title "Listing Rewards" %>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Description</th>
+    <th>Reward Class</th>
+    <th>Reward Point</th>
+    <th></th>
+  </tr>
+
+<% @rewards.each do |reward| %>
+  <tr>
+    <td><%= reward.name %></td>
+    <td><%= reward.description %></td>
+    <td><%= reward.reward_class.name rescue nil %></td>
+    <td><%= reward.reward_point %></td>
+    <td><%= link_to 'Show', admins_reward_path(reward) %> |
+    <%= link_to 'Edit', edit_admins_reward_path(reward) %> |
+    <%= link_to 'Destroy', admins_reward_path(reward), confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Reward', new_admins_reward_path %>

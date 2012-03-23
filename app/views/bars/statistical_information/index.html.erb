@@ -1,0 +1,17 @@
+<h2>Statistical Information</h2>
+
+<p>
+  <b>Total swigged people today: <%= @daily_total_swigs %></b>
+</p>
+
+<p>
+  <b>Total swigged people of the week: <%= @weekly_total_swigs %></b>
+</p>
+
+<p>
+  <b>Total swigged people of the month: <%= @monthly_total_swigs %></b>
+</p>
+
+<p>
+  <b>Deal most often get unlocked: <%= @deal_most_often_get_unlocked.deal.name if @deal_most_often_get_unlocked and @deal_most_often_get_unlocked.deal %></b>
+</p>

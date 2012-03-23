@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>User:</b>
+  <%= @status.user_id %>
+</p>
+
+<p>
+  <b>Body:</b>
+  <%= @status.body %>
+</p>
+
+
+<%= link_to 'Edit', edit_status_path(@status) %> |
+<%= link_to 'Back', status_index_path %>

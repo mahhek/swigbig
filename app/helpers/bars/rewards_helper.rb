@@ -1,0 +1,2 @@
+module Bars::RewardsHelper
+end

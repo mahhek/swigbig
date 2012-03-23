@@ -1,0 +1,13 @@
+<%= form_for(object, :url => url, :method => method) do |f| %>
+
+  <%= f.error_messages %>
+
+  <div class="field">
+    <%= f.label :deal_id %><br />
+    <%= f.select :deal_id, options_from_collection_for_select(@default_deals, "id", "name", @bar_deal.deal_id), :include_blank => true %>
+  </div>
+  <div class="actions">
+    <%= f.submit "Create Deal" %>
+  </div>
+<% end %>
+

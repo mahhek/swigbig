@@ -1,0 +1,649 @@
+body{
+    /*  background:#E3C3AC;*/
+    font-family: Helvetica;
+    /*  background: #dbe3fb;*/
+    background: #142fa1;
+}
+a{
+    text-decoration:none;
+}
+a:hover{
+    text-decoration:none;
+}
+img{
+    border:none;
+}
+select{
+    -moz-border-radius: 3px 3px 3px 3px;
+    -webkit-border-radius: 3px 3px 3px 3px;
+    margin-top: 10px;
+    padding: 3px;
+    width: 170px;
+}
+.button{
+    background: url("/images/btn.png") repeat scroll 0 0 transparent;
+    color:#575040;
+    font-size: 14px;
+    padding: 8px 14px;
+    -moz-border-radius: 10px 10px 10px 10px;
+    -webkit-border-radius: 10px 10px 10px 10px;
+    -moz-box-shadow: 2px 2px 2px #747777;
+    -webkit-border-radius: 2px 2px 2px #747777;
+}
+.button:hover{
+    background: url("/images/btn.png") repeat scroll 0 -35px transparent;
+}
+.bar-logo{
+    text-align: center;
+    margin-top: 75px;
+}
+.bar{
+    position:absolute;
+}
+.bar-logo2{
+    text-align: center;
+    float: left;
+}
+.left{
+    float:left;
+}
+.right{
+    float:right;
+}
+.clear{
+    clear:both;
+}
+.register-panel{
+    padding: 10px;
+    position: absolute;
+    top: 1%;
+    width: 250px;
+}
+.register-panel h2{
+    font-family: Helvetica;
+    font-size: 16px;
+    color: #EAEFFD;
+}
+.register-panel span{
+
+}
+.register-panel input[type=text]{
+    background: url("/images/field.png") repeat scroll 0 0 transparent;
+    border: medium none;
+    color: #222222;
+    font-size: 12px;
+    height: 40px;
+    margin-bottom: 5px;
+    padding: 12px;
+    width: 200px;
+}
+.register-panel .text{
+    background: url("/images/field.png") repeat scroll 0 0 transparent;
+    border: medium none;
+    color: #222222;
+    font-size: 12px;
+    height: 40px;
+    margin-bottom: 5px;
+    padding: 12px;
+    width: 200px;
+}
+.register-panel input[type=submit]{
+    -moz-border-radius: 3px 3px 3px 3px;
+    -moz-box-shadow: 2px 2px 2px #747777;
+    -webkit-border-radius: 3px 3px 3px 3px;
+    -webkit-box-shadow: 2px 2px 2px #747777;
+    background: url("/images/btn.png") repeat scroll 0 0 transparent;
+    border: medium none;
+    padding: 8px;
+    cursor:pointer;
+}
+.register-panel .submit{
+    -moz-border-radius: 3px 3px 3px 3px;
+    -moz-box-shadow: 2px 2px 2px #747777;
+    -webkit-border-radius: 3px 3px 3px 3px;
+    -webkit-box-shadow: 2px 2px 2px #747777;
+    background: url("/images/btn.png") repeat scroll 0 0 transparent;
+    border: medium none;
+    padding: 8px;
+    cursor:pointer;
+}
+.register-panel input[type=submit]:hover{
+    background: url("/images/btn.png") repeat scroll 0 -35px transparent;
+}
+.register-panel .submit:hover{
+    background: url("/images/btn.png") repeat scroll 0 -35px transparent;
+}
+#img_footer_1{
+    background: url(/images/night-city.png);
+}
+.footer{
+    height: 250px;
+    bottom:0px;
+    left:0px !important;
+    position:fixed;
+    z-index:1;
+    width:100%;
+}
+.social-activity{
+    background: #142fa1;
+    bottom: 0;
+    height: 50px;
+    position: fixed;
+    width: 100%;
+    z-index: 100;
+}
+.social-activity .text{
+    float: left;
+    font: 14px/1em "Arial";
+    margin-left: 100px;
+    padding-top: 15px;
+}
+.button-bar{
+    background: url(/images/button-blue.png);
+    color: #222222;
+    font: 14px/1em "Arial";
+    margin-right: 20px;
+    margin-top: 5px;
+    padding: 7px 10px;
+    text-decoration: none;
+    -moz-box-shadow: 2px 2px 2px #222222;
+    -webkit-box-shadow: 2px 2px 2px #222222;
+    -moz-border-radius: 3px 3px 3px 3px;
+    -webkit-border-radius: 3px 3px 3px 3px;
+}
+.button-bar:hover{
+    background: #83a4fb;
+}
+.iphone{
+    position: absolute;
+    right: 3%;
+    top: 30px;
+}
+.android{
+    position: absolute;
+    right: 3%;
+    top: 100px;
+}
+.iphone-login{
+    position: absolute;
+    right: 3%;
+    top: 30%;
+}
+.android-login{
+    position: absolute;
+    right: 3%;
+    top: 43%;
+}
+.login-header{
+    height: 25%;
+    margin: 0 auto;
+    width: 60%;
+}
+.login-header .header{
+    margin-left: -265px;
+    margin-top: 10px;
+    position: absolute;
+    z-index: -1;
+}
+.login-header .menu-bar{
+    float: left;
+    height: 50px;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: 30px;
+    width: 200px;
+}
+.login-header .menu-bar .menu-button{
+    -moz-border-radius: 3px 3px 3px 3px;
+    -webkit-border-radius: 3px 3px 3px 3px;
+    -moz-box-shadow: 2px 2px 2px #747777;
+    -webkit-box-shadow: 2px 2px 2px #747777;
+    background: url(/images/button-blue.png);
+    color: #222222;
+    font-size: 14px;
+    font-family: Arial;
+    padding: 6px 10px;
+}
+.login-header .menu-bar .menu-button:hover{
+    background: #83a4fb;
+}
+.login-header .menu-bar-login {
+    float: left;
+    height: 50px;
+    margin-left: -71px;
+    margin-right: 10px;
+    margin-top: 30px;
+    width: 295px;
+}
+.login-header .menu-bar-login .menu-button{
+    -moz-border-radius: 3px 3px 3px 3px;
+    -webkit-border-radius: 3px 3px 3px 3px;
+    -moz-box-shadow: 2px 2px 2px #747777;
+    -webkit-box-shadow: 2px 2px 2px #747777;
+    background: url(/images/button-blue.png);
+    color: #222222;
+    font-size: 14px;
+    font-family: Arial;
+    padding: 6px 10px;
+}
+.login-header .menu-bar-login .menu-button:hover{
+    background: #83a4fb;
+}
+.login-header .menu-bar-bars-login {
+    float: left;
+    height: 50px;
+    margin-left: 486px;
+    margin-right: 10px;
+    margin-top: 30px;
+    position: absolute;
+    width: 415px;
+}
+.login-header .menu-bar-bars-login .menu-button{
+    -moz-border-radius: 3px 3px 3px 3px;
+    -webkit-border-radius: 3px 3px 3px 3px;
+    -moz-box-shadow: 2px 2px 2px #747777;
+    -webkit-box-shadow: 2px 2px 2px #747777;
+    background: url(/images/button-blue.png);
+    color: #222222;
+    font-size: 14px;
+    font-family: Arial;
+    padding: 6px 10px;
+}
+.login-header .menu-bar-bars-login .menu-button:hover{
+    background: #83a4fb;
+}
+.login-header .menu-bar-dashboard-login {
+    float: left;
+    height: 50px;
+    margin-left: 477px;
+    margin-right: 10px;
+    margin-top: 30px;
+    position: absolute;
+    width: 500px;
+}
+.login-header .menu-bar-dashboard-login .menu-button{
+    -moz-border-radius: 3px 3px 3px 3px;
+    -webkit-border-radius: 3px 3px 3px 3px;
+    -moz-box-shadow: 2px 2px 2px #747777;
+    -webkit-box-shadow: 2px 2px 2px #747777;
+    background: url(/images/button-blue.png);
+    color: #222222;
+    font-size: 14px;
+    font-family: Arial;
+    padding: 6px 10px;
+}
+.login-header .menu-bar-dashboard-login .menu-button:hover{
+    background: #83a4fb;
+}
+.login-header .menu-bar-dashboard2-login {
+    float: left;
+    height: 50px;
+    margin-left: 230px;
+    margin-right: 10px;
+    margin-top: 75px;
+    position: absolute;
+    width: 611px;
+}
+.login-header .menu-bar-dashboard2-login .menu-button{
+    -moz-border-radius: 3px 3px 3px 3px;
+    -webkit-border-radius: 3px 3px 3px 3px;
+    -moz-box-shadow: 2px 2px 2px #747777;
+    -webkit-box-shadow: 2px 2px 2px #747777;
+    background: url(/images/button-blue.png);
+    color: #222222;
+    font-size: 14px;
+    font-family: Arial;
+    padding: 6px 10px;
+}
+.login-header .menu-bar-dashboard2-login .menu-button:hover{
+    background: #83a4fb;
+}
+.login-header .menu-bar-admin-login {
+    float: left;
+    height: 50px;
+    margin-left: 476px;
+    margin-right: 10px;
+    margin-top: 30px;
+    position: absolute;
+    width: 480px;
+}
+.login-header .menu-bar-admin-login .menu-button{
+    -moz-border-radius: 3px 3px 3px 3px;
+    -webkit-border-radius: 3px 3px 3px 3px;
+    -moz-box-shadow: 2px 2px 2px #747777;
+    -webkit-box-shadow: 2px 2px 2px #747777;
+    background: url(/images/button-blue.png);
+    color: #222222;
+    font-size: 14px;
+    font-family: Arial;
+    padding: 6px 10px;
+}
+.login-header .menu-bar-admin-login .menu-button:hover{
+    background: #83a4fb;
+}
+.login-header .menu-bar-admin2-login {
+    float: left;
+    height: 50px;
+    margin-left: 388px;
+    margin-right: 10px;
+    margin-top: 75px;
+    position: absolute;
+    width: 611px;
+}
+.login-header .menu-bar-admin2-login .menu-button{
+    -moz-border-radius: 3px 3px 3px 3px;
+    -webkit-border-radius: 3px 3px 3px 3px;
+    -moz-box-shadow: 2px 2px 2px #747777;
+    -webkit-box-shadow: 2px 2px 2px #747777;
+    background: url(/images/button-blue.png);
+    color: #222222;
+    font-size: 14px;
+    font-family: Arial;
+    padding: 6px 10px;
+}
+.login-header .menu-bar-admin2-login .menu-button:hover{
+    background: #83a4fb;
+}
+.dashboard-panel{
+    margin-left: 499px;
+    margin-top: 22px;
+    padding-bottom: 25px;
+    padding-right: 188px;
+    /*    padding-top: 55px;*/
+    position: absolute;
+    top: 25%;
+    width: 200px;
+    z-index: 25;
+}
+.login-panel{
+    padding: 10px;
+    position: absolute;
+    top: 25%;
+    width: 200px;
+}
+.login-panel h2{
+    font-family: Helvetica;
+    font-size: 16px;
+    color: #EAEFFD;
+}
+.login-panel .user a{
+    font-family: Helvetica;
+    font-size: 14px;
+    color: #EAEFFD;
+}
+.login-panel .bar a{
+    font-family: Helvetica;
+    font-size: 14px;
+    color: #EAEFFD;
+}
+.login-panel .admin a{
+    font-family: Helvetica;
+    font-size: 14px;
+    color: #EAEFFD;
+}
+.login-panel label{
+    font-family: Arial;
+    font-size: 14px;
+    color: #EAEFFD;
+}
+.login-panel input[type=text]{
+    background: url("/images/field.png") repeat scroll 0 0 transparent;
+    border: medium none;
+    color: #222222;
+    font-size: 12px;
+    height: 40px;
+    margin-bottom: 5px;
+    padding: 12px;
+    width: 200px;
+}
+.login-panel .text{
+    background: url("/images/field.png") repeat scroll 0 0 transparent;
+    border: medium none;
+    color: #222222;
+    font-size: 12px;
+    height: 40px;
+    margin-bottom: 5px;
+    padding: 12px;
+    width: 200px;
+}
+.how-to{
+    float:right;
+    margin-right:40px;
+    margin-top:20px;
+    color:#eaeffd;
+}
+.signup-social{
+    float: left;
+    margin-left: 250px;
+    margin-top: 100px;
+    width: 300px;
+}
+.signup-social #fb{
+    margin-top: -45px;   
+    height: 50px;
+    width: 200px;
+
+}
+.signup-social #fb a{
+/*    background: url("/images/fb-icon-blue.png");*/
+    padding: 15px 100px;
+}
+.signup-social #fb a:hover{
+/*    background: url("/images/fb-icon-blue2.png");*/
+}
+.signup-social #tw{
+    height: 50px;
+    margin-top: 10px;
+    width: 200px;
+}
+.signup-social #tw a{
+/*    background: url("/images/twit-icon-blue.png");*/
+    padding: 15px 100px;
+}
+.signup-social #tw a:hover{
+/*    background: url("/images/twit-icon-blue2.png");*/
+}
+.signup-social #go{
+    height: 50px;
+    margin-top: 10px;
+    width: 200px;
+}
+.signup-social #go a{
+/*    background: url("/images/Google-icon.png");*/
+    padding: 15px 100px;
+}
+.signup-social #go a:hover{
+/*    background: url("/images/Google-icon2.png");*/
+}
+.signup-social #or{
+    font-size: 14px;
+}
+
+.popup{
+    height: 350px;
+    margin: 20px auto;
+    overflow: hidden;
+    position: relative;
+    width: 550px;
+    z-index: 10;
+}
+.popup .progress-gray{
+    background: url("/images/bar-static.png") repeat scroll 0 0 transparent;
+    border: 1px solid #747777;
+    height: 16px;
+    margin: 0 auto 30px;
+    width: 400px;
+}
+.popup .progress-red{
+    background: url(/images/bar-progress.gif);
+    width:100px;
+    height:16px;
+}
+.popup .content{
+    background: none repeat scroll 0 0 #FFFFFF;
+    border: 2px solid #575040;
+    padding: 10px;
+    width: 500px;
+    position:absolute;
+}
+.popup .content p{
+    font-family: helvetica;
+    font-size: 14px;
+    margin-top: 20px;
+}
+.popup .content .title{
+    background: none repeat scroll 0 0 #FFFFFF;
+    border-left: 2px solid #575040;
+    border-right: 2px solid #575040;
+    border-top: 2px solid #575040;
+    color: #575040;
+    font-family: helvetica;
+    font-size: 14px;
+    font-weight: bold;
+    height: 8px;
+    margin-left: 5px;
+    margin-top: -30px;
+    padding: 5px 10px;
+}
+.popup #content_3{
+    left: 550px;
+}
+.popup #content_2{
+
+}
+.popup #content_4{
+    left: 1100px;
+}
+.contact-info{
+    border: 2px solid;
+    height: 50px;
+    padding: 5px 10px;
+    width: 200px;
+    margin-top:20px;
+}
+.bar-specials{
+    border: 2px solid;
+    padding: 5px 10px;
+    width: 300px;
+    margin-top:20px;
+}
+.bar-specials p{
+    font-size:14px;
+}
+.bar-specials .desc{
+    font-size:14px;
+    font-family:helvetica;
+    height: 50px;
+}
+.bar-specials .desc-right{
+    font-size:14px;
+    font-family:helvetica;
+    margin-top:10px;
+}
+.swig-royalty{
+    border: 2px solid;
+    margin: 30px auto;
+    padding: 5px 10px 15px;
+    width: 250px;
+}
+.swig-royalty div{
+    height: 40px;
+    margin-top: 10px;
+    width: 250px;
+}
+.swig-royalty p{
+    float:left;
+    font-size:14px;
+    font-family:Helvetica;
+}
+.swig-royalty img{
+    float:left;
+}
+.status{
+    border: 2px solid;
+    padding: 5px 10px;
+    position: absolute;
+    right: 3%;
+    top: 200px;
+    width: 200px;
+}
+.status h2{
+    font-size:14px;
+}
+.status .img{
+    width:30px;
+    float:left;
+}
+.status .stat{
+    float: left;
+    font-size: 12px;
+    margin-top: 7px;
+    width: 170px;
+}
+.city{
+    width:200px;
+    margin:0 auto;
+}
+
+
+.user-content{
+    margin: 0 auto;
+    width: 800px;
+}
+.user-top{
+    background: url("/images/user-panel-top.png");
+    width: 799px;
+    height:19px;
+    position: relative;
+    z-index: 2;
+}
+.user-mid{
+    background: url("/images/user-panel-mid.png");
+    width: 799px;
+    height:auto;
+    position: relative;
+    z-index: 2;
+}
+.admin-mid .admin-panel{
+    margin-left: 25px;
+    width: 765px;
+    position: relative;
+    z-index: 2;
+}
+.user-mid .user-panel a{
+    -moz-border-radius: 3px 3px 3px 3px;
+    -webkit-border-radius: 3px 3px 3px 3px;
+    background: url(/images/button-gray.png);
+    color: #222222;
+    font-size: 14px;
+    font-family: Arial;
+    padding: 6px 10px;
+    position: relative;
+    z-index:3;
+}
+.user-mid .user-panel a:hover{
+    background: none repeat scroll 0 0 #E3E7EC;
+    position: relative;
+    z-index:7;
+}
+.user-mid .user-panel a.active{
+    background: none repeat scroll 0 0 #E3E7EC;
+    position: relative;
+    z-index: 7;
+}
+.user-bot{
+    background: url("/images/user-panel-bot.png");
+    width: 799px;
+    height:19px;
+    position: relative;
+    z-index: 2;
+}
+.user-mid .container{
+    margin-bottom: -13px;
+    margin-left: 15px;
+    min-height: 200px;
+    padding: 20px 0 20px 20px;
+    position: relative;
+    width: 748px;
+    z-index: 2;
+}

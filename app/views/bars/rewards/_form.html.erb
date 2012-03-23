@@ -1,0 +1,31 @@
+<div>
+  <h3>New Reward</h3>
+  <%= form_for(object, :url => url, :method => method) do |f| %>
+    <%= f.error_messages %>
+
+    <div class="field">
+      <%= f.label "What's the Reward?" %><br />
+      <%= f.text_field :name %>
+    </div>
+
+    <%#*<div class="field">%>
+      <%#= f.label :description %><br />
+      <%#= f.text_area :description, :rows => 4 %>
+    <%#*</div>%>
+
+    <%#*<div class="field">%>
+      <%#= f.label :reward_point %><br />
+      <%#= f.text_field :reward_point %>
+    <%#*</div>%>
+
+    <%#*<div class="field">%>
+      <%#= f.label :reward_class_id %><br />
+      <%#= f.select :reward_class_id, options_from_collection_for_select(@reward_classes, "id", "name") %>
+    <%#*</div>%>
+
+    <div class="actions">
+      <%= f.submit %>
+    </div>
+
+  <% end %>
+</div>

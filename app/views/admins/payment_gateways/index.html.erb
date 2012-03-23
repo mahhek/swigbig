@@ -1,0 +1,27 @@
+<% title "Listing Payment Gateways" %>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Login</th>
+    <th>Signature</th>
+    <th>Status</th>
+    <th></th>
+  </tr>
+
+<% @payment_gateways.each do |payment_gateway| %>
+  <tr>
+    <td><%=h payment_gateway.name.truncate(30) %></td>
+    <td><%=h payment_gateway.login %></td>
+    <td><%=h payment_gateway.signature %></td>
+    <td><%= payment_gateway.status? ? "In Use" : "Inactive" %></td>
+    <td><%= link_to 'Show', admins_payment_gateway_path(payment_gateway) %> |
+    <%= link_to 'Edit', edit_admins_payment_gateway_path(payment_gateway) %> |
+    <%= link_to 'Destroy', admins_payment_gateway_path(payment_gateway), confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Payment Gateways', new_admins_payment_gateway_path %>

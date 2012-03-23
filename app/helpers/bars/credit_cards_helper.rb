@@ -1,0 +1,2 @@
+module Bars::CreditCardsHelper
+end

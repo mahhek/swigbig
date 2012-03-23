@@ -1,0 +1,11 @@
+<% title "Sign Up - Step 3" %>
+
+<p>Avatar: <%= image_tag resource.avatar.url(:thumb) rescue image_tag resource.logo.url(:thumb) %></p>
+<p>Name: <%=h resource.name %></p>
+<p>Email: <%=h resource.email %></p>
+<p>Phone Number: <%=h resource.phone_number %></p>
+<p>Address: <%=h resource.address %></p>
+<p>Zip Code: <%=h resource.zip_code %></p>
+<p>City: <%=h resource.city %></p>
+<p>State: <%=  resource.state %></p>
+<p>Country: <%= resource.country %></p>

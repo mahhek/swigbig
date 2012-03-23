@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/Fixtures.html
+
+one:
+  reward_id: 1
+  earned: 1
+  swig_id: 1
+  total: 1
+  recipient_id: 1
+
+two:
+  reward_id: 1
+  earned: 1
+  swig_id: 1
+  total: 1
+  recipient_id: 1

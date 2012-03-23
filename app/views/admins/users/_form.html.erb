@@ -1,0 +1,52 @@
+<%= form_for(@user, :url => url) do |f| %>
+  <% if @user.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
+
+      <ul>
+      <% @user.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div><%= f.label :name %><br />
+  <%= f.text_field :name %></div>
+
+  <div><%= f.label :email %><br />
+  <%= f.email_field :email %></div>
+
+  <div><%= f.label :phone_number %><br />
+  <%= f.text_field :phone_number %></div>
+
+  <div><%= f.label :address %><br />
+  <%= f.text_field :address %></div>
+
+  <div><%= f.label :zip_code %><br />
+  <%= f.text_field :zip_code %></div>
+
+  <div><%= f.label :city %><br />
+  <%= f.text_field :city %></div>
+
+  <div><%= f.label :country %><br />
+  <%= f.select :country_abbr, Carmen.countries, {:selected => "US"}, {:disabled => true} %> <i>(for now we only support United States)</i></div>
+
+  <%= f.hidden_field :country_abbr, {:value => "US"} %>
+
+  <div><%= f.label :state %><br />
+  <%= f.select :state_abbr, Carmen::states('US'), {:selected => @user.state_abbr} %></div>
+
+  <div><%= f.label :password %><br />
+  <%= f.password_field :password %></div>
+
+  <div><%= f.label :password_confirmation %><br />
+  <%= f.password_field :password_confirmation %></div>
+
+  <div><%= f.label :avatar %><br />
+  <%= f.file_field :avatar %></div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

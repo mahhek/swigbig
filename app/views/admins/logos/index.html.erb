@@ -1,0 +1,25 @@
+<h1>Listing Logos</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Status</th>
+    <th>Image</th>
+    <th></th>
+  </tr>
+
+<% @logos.each do |logo| %>
+  <tr>
+    <td><%=h logo.name.truncate(30) %></td>
+    <td><%= logo.active? ? "In Use" : "Inactive" %></td>
+    <td><%= image_tag logo.image.url(:thumb) %></td>
+    <td><%= link_to 'Show', admins_logo_path(logo) %> |
+    <%= link_to 'Edit', edit_admins_logo_path(logo) %> |
+    <%= link_to 'Destroy', admins_logo_path(logo), confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Logos', new_admins_logo_path %>

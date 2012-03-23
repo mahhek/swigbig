@@ -1,0 +1,27 @@
+<%= form_for(@reward, :url => url) do |f| %>
+  <%= f.error_messages %>
+
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= f.label :description %><br />
+    <%= f.text_area :description, :rows => 4 %>
+  </div>
+
+  <div class="field">
+    <%= f.label :reward_class_id %><br />
+    <%= f.select :reward_class_id, options_from_collection_for_select(@reward_classes, "id", "name") %>
+  </div>
+
+  <div class="field">
+    <%= f.label :reward_point %><br />
+    <%= f.text_field :reward_point %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,3 @@
+<p>Avatar: <%= image_tag user.avatar.url(:thumb) %></p>
+<p>Name: <%=h user.name %></p>
+<%= link_to "Add as friend", friend_path(user), :method => :put %>

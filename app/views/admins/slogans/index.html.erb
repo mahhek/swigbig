@@ -1,0 +1,23 @@
+<h1>Listing Slogan</h1>
+
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Status</th>
+    <th></th>
+  </tr>
+
+<% @slogans.each do |slogan| %>
+  <tr>
+    <td><%=h slogan.title.truncate(30) %></td>
+    <td><%= slogan.active? ? "In Use" : "Inactive" %></td>
+    <td><%= link_to 'Show', admins_slogan_path(slogan) %> |
+    <%= link_to 'Edit', edit_admins_slogan_path(slogan) %> |
+    <%= link_to 'Destroy', admins_slogan_path(slogan), confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Deal', new_admins_slogan_path %>

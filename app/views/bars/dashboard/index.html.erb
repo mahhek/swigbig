@@ -1,0 +1,11 @@
+<%- unless (deal_notify = is_bar_have_deal_not_notification_yet?(current_bar)).blank? %>
+  <h3>Following deals already active</h3>
+  <ul>
+    <%- deal_notify.each do |bar_deal| %>
+      <li><%= bar_deal.deal.name %></li>
+    <%- end %>
+  </ul>
+  <%#- already_notified(deal_notify) %>
+<%- end %>
+<h1>Hi <%=h current_bar.name %>, welcome back!</h1>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>

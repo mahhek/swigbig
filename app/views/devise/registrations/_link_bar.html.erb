@@ -1,0 +1,10 @@
+<div id="link">
+  <h2><%= link_to "Sign In User", new_user_session_path(:login=>"user"), :remote => true, :onclick => "jQuery('#sign-up-loader').show();" %></h2>
+  <h2><%= link_to "Sign In Bar", new_bar_session_path(:login=>"bar"), :remote => true, :onclick => "jQuery('#sign-up-loader').show();" %></h2>
+  <h2><%= link_to "Sign In Admin", new_admin_session_path(:login=>"admin"), :remote => true, :onclick => "jQuery('#sign-up-loader').show();" %></h2>
+  <div id="link_image">
+    <%= link_to image_tag("/images/facebook-icon.png", :width => 25, :height => 25), user_omniauth_authorize_path("facebook") %>
+    <%= link_to image_tag("/images/twitter-icon.png", :width => 25, :height => 25), user_omniauth_authorize_path("twitter") %>
+    <%= link_to image_tag("/images/google-icon.png", :width => 25, :height => 25), user_omniauth_authorize_path("google", :user_type_login => "bar") %>
+  </div>
+</div>

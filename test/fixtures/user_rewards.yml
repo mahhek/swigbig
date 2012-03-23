@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/Fixtures.html
+
+one:
+  user_id: 1
+  reward_id: 1
+  earned: false
+
+two:
+  user_id: 1
+  reward_id: 1
+  earned: false

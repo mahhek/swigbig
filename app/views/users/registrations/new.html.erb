@@ -1,0 +1,13 @@
+<%= form_for(resource, :as => resource_name, :url => registration_path(resource_name), :multipart => true) do |f| %>
+  <%= devise_error_messages! %>
+
+  <%= render "users/shared/#{resource.current_step}_step", :f => f %>
+
+  <div class="clear"></div>
+  <br/>
+  <%= f.submit "Get Swigging", :class=> "submit" %>
+  <div class="clear"></div>
+  <%= f.submit "Back", :name => "back_button" unless resource.first_step? %>
+<% end %>
+
+<%#= render :partial => "devise/shared/links" %>

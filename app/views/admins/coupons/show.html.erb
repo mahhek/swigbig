@@ -1,0 +1,12 @@
+<p>
+  <b>Code:</b>
+  <%=h @coupon.code %>
+</p>
+
+<p>
+  <b>Expire Date:</b>
+  <%= @coupon.expire_date.strftime("%d %B %Y") %>
+</p>
+
+<%= link_to 'Edit', edit_admins_coupon_path(@coupon) %> |
+<%= link_to 'Back', admins_coupons_path %>

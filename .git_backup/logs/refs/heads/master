@@ -1,0 +1,27 @@
+0000000000000000000000000000000000000000 7376a77f06fe66c707690225743cda7796a8a9e6 Hendra <hendra@41studio> 1317133594 +0700	commit (initial): initial commit
+7376a77f06fe66c707690225743cda7796a8a9e6 63db6a86288bdbf1908405de28848914abeae328 Hendra <hendra@41studio> 1317145668 +0700	commit: implementing plans, logos and slogans on admin backend
+63db6a86288bdbf1908405de28848914abeae328 5f736390fb3cbfd03bef2e9282dbffa5bd2553a7 Hendra <hendra@41studio> 1317212885 +0700	pull origin master: Fast-forward
+5f736390fb3cbfd03bef2e9282dbffa5bd2553a7 2b3c892fab93145880dd2be61b5ac224e765ca37 Hendra <hendra@41studio> 1317223412 +0700	commit: updates for admin backend
+2b3c892fab93145880dd2be61b5ac224e765ca37 4f52b39fe8db6c4f263e1a9fd57a6de30c10afcf Hendra <hendra@41studio> 1317226894 +0700	commit: setup capistrano
+4f52b39fe8db6c4f263e1a9fd57a6de30c10afcf 0099e17a8dd7444cc64219a8da97bc87ee7c1c9b Hendra <hendra@41studio> 1317235454 +0700	commit: setup mailer
+0099e17a8dd7444cc64219a8da97bc87ee7c1c9b 63fb6820675d55bc6b50c19e1f486d9091ecc5f4 Hendra <hendra@41studio> 1317236454 +0700	commit: setting up actionmailer
+63fb6820675d55bc6b50c19e1f486d9091ecc5f4 8d70b5383aa6d150439b91f5252c581b4eeeefc4 Hendra <hendra@41studio> 1317237002 +0700	commit: setup mailer
+8d70b5383aa6d150439b91f5252c581b4eeeefc4 659924ac449d1b4184bca7577690691b0c178de1 Hendra <hendra@41studio> 1317238001 +0700	commit: setup mailer
+659924ac449d1b4184bca7577690691b0c178de1 3b51d19d1521330ccd482ac4f9c5dc7e998a5f0e Hendra <hendra@41studio> 1317238437 +0700	commit: setup mailer
+3b51d19d1521330ccd482ac4f9c5dc7e998a5f0e 298d7644d4e97c8d4dd8e9ee0328980eda3dcb67 Hendra <hendra@41studio> 1317238537 +0700	commit: setup mailer
+298d7644d4e97c8d4dd8e9ee0328980eda3dcb67 1ea0ccf31e078a07e00e710cf46251aa15aae8e6 Hendra <hendra@41studio> 1317299546 +0700	pull origin master: Fast-forward
+1ea0ccf31e078a07e00e710cf46251aa15aae8e6 4640a9d6cd15a2a2c6ea71da4383f7c91bfa83a9 Hendra <hendra@41studio> 1317300176 +0700	commit: implement registration wizard for user
+4640a9d6cd15a2a2c6ea71da4383f7c91bfa83a9 9676437bc48ff744d0bc1816fcffc8fde3cd96e1 Hendra <hendra@41studio> 1317315316 +0700	commit: implementing form wizard for registration
+9676437bc48ff744d0bc1816fcffc8fde3cd96e1 8041457f780c4ea53abd2ab9bcc6aefb3aa7242a Hendra <hendra@41studio> 1317372166 +0700	pull origin master: Fast-forward
+8041457f780c4ea53abd2ab9bcc6aefb3aa7242a b6bf046a380e2dd03632d1e8d01a9446e75bcc5a Hendra <hendra@41studio> 1317379470 +0700	pull origin master: Fast-forward
+b6bf046a380e2dd03632d1e8d01a9446e75bcc5a 9b1f4153bf8aafbd1ef0e1ff6e013372f565e2a4 Hendra <hendra@41studio> 1317380579 +0700	commit: implementing rewards in admin backend
+9b1f4153bf8aafbd1ef0e1ff6e013372f565e2a4 5b1a281bc92d4f8a2217d2f0b186df70b1e6848f Hendra <hendra@41studio> 1317451251 +0700	pull origin master: Fast-forward
+5b1a281bc92d4f8a2217d2f0b186df70b1e6848f a149657918cc6ae9f01c6bc3297ea0ff474bcdc2 Hendra <hendra@41studio> 1317701123 +0700	pull origin master: Fast-forward
+a149657918cc6ae9f01c6bc3297ea0ff474bcdc2 6fb5270742afbfd98ddb1f40c492bc358b58afc4 Hendra <hendra@41studio> 1317728143 +0700	pull origin master: Fast-forward
+6fb5270742afbfd98ddb1f40c492bc358b58afc4 5f03367df4dc71ab44a112c32d4661006b95c49b Hendra <hendra@41studio> 1317730054 +0700	commit: implement auto geolocation based on the bar address
+5f03367df4dc71ab44a112c32d4661006b95c49b 8ddb3d1699c8265ba1a9662ba82f1139ac2ca565 Hendra <hendra@41studio> 1318211484 +0700	pull origin master: Fast-forward
+8ddb3d1699c8265ba1a9662ba82f1139ac2ca565 4f6972ef64e670924a713c51d072fba73255d23d Hendra <hendra@41studio> 1318383083 +0700	pull origin master: Fast-forward
+4f6972ef64e670924a713c51d072fba73255d23d 993760c30d093e7115b9134b0ff84d5e0b01039f Hendra <hendra@41studio> 1318513111 +0700	pull origin master: Fast-forward
+993760c30d093e7115b9134b0ff84d5e0b01039f 53e00acfef6c52f872ac74cfaa8ed410d772aa06 Hendra <hendra@41studio> 1318573627 +0700	pull origin master: Fast-forward
+53e00acfef6c52f872ac74cfaa8ed410d772aa06 216846d35800644954838a9910d07daaf93325c6 Hendra <hendra@41studio> 1318573891 +0700	commit: re-enable amistad from hendra's fork
+216846d35800644954838a9910d07daaf93325c6 078584c2aa8a3db72cd7dab18dac9a07269bb324 Hendra <hendra@41studio> 1319009369 +0700	pull origin master: Fast-forward

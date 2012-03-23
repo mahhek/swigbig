@@ -1,0 +1,20 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/Fixtures.html
+
+one:
+  code: MyString
+  expire_date: 2011-09-27
+
+two:
+  code: MyString
+  expire_date: 2011-09-27
+# == Schema Information
+#
+# Table name: coupons
+#
+#  id          :integer(4)      not null, primary key
+#  code        :string(255)
+#  expire_date :date
+#  created_at  :datetime
+#  updated_at  :datetime
+#
+

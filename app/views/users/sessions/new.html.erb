@@ -1,0 +1,7 @@
+<h2>Sign in as User</h2>
+<%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
+  <%= f.text_field :email, :class => "text", :placeholder => "Email", :style=>"width: 225px;" %>
+  <%= f.password_field :password, :class => "text", :placeholder => "Password", :style=>"width: 225px;" %>
+  <%= f.submit "Go", :class => "button button_small" %>
+<% end %>
+

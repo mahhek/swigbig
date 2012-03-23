@@ -1,0 +1,4 @@
+$('#sign-panel').replaceWith('<%= escape_javascript(render(:partial => "bars/registrations/new")) %>');
+$('#link').hide();
+$('#link').replaceWith('<%= escape_javascript(render(:partial => "devise/registrations/link_bar")) %>');
+$('#sign-loader').hide();

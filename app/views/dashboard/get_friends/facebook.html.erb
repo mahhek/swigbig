@@ -1,0 +1,27 @@
+<% unless @users.blank? %>
+  <% @users.each do |user| %>
+    <%= render :partial => "dashboard/get_friends/user_profile", :locals => {:user => user} %>
+  <% end %>
+  <p>Sorry there are no friends found</p>
+<% end %>
+
+<br /><br />
+<a href="#" id="invite_fb_friends">Invite more from Facebook</a>
+<br />
+<%= link_to "Back", user_root_path %>
+<script src="http://connect.facebook.net/en_US/all.js"></script>
+<script>
+  $(function(){
+    $("a#invite_fb_friends").click(function(){
+      FB.init({
+        appId: '277531728941437',
+        status: true,
+        cookie: false,
+        // xfbml: true
+      });
+      FB.ui({
+        method: 'apprequests',
+        message: '<%=current_user.name %> has invite you to SwigBig'});
+    });
+  });
+</script>

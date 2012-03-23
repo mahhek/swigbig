@@ -1,0 +1,11 @@
+<div style="float: left;width: 100%;">
+  <div style="border: 1px solid black;cursor: pointer;float: left;width: 30%;padding:9%; " >
+    <%= link_to "Activate Swig", "/deal_status_update?id=#{@deal.id}" %>
+  </div>
+  <div style="border: 1px solid black;cursor: pointer;float: left;width: 30%;padding:9%; " >
+    <%= link_to "Setup a new one", new_bars_deal_path %>
+  </div>
+</div>
+<div style="float: right;width: 100%;">
+  <%= link_to "Done", "/bars/deals" %>
+</div>

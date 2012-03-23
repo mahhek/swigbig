@@ -1,0 +1,22 @@
+<p>
+  <b>Name:</b>
+  <%= @reward.name %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @reward.description %>
+</p>
+
+<p>
+  <b>Reward class:</b>
+  <%= @reward.reward_class.name rescue nil %>
+</p>
+
+<p>
+  <b>Reward point:</b>
+  <%= @reward.reward_point %>
+</p>
+
+<%= link_to 'Edit', edit_bars_reward_path(@reward) %> |
+<%= link_to 'Back', bars_rewards_path %>

@@ -1,0 +1,6 @@
+<% unless facebook_friends_ids.blank? %>  
+  <% users =   fb_user_swig_big(facebook_friends_ids) %>
+  <% users.each do |user| %>
+   <%=  user.full_name %>
+   <% end %>
+<% end %>

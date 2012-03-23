@@ -1,0 +1,20 @@
+<% title "Bars" %>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+
+<h3>Listing Bars</h3>
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Address</th>
+    <th></th>
+  </tr>
+  <% @bars.each do |bar| %>
+    <tr>
+      <td><%=h bar.name %></td>
+      <td><%=h bar.gmaps4rails_address %></td>
+      <td><%= link_to "View on Map", "#" %></td>
+    </tr>
+  <% end %>
+</table>
+
+<%= will_paginate @bars %>

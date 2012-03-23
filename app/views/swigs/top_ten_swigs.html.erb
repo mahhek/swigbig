@@ -1,0 +1,21 @@
+<h1>Top ten list</h1>
+
+<table>
+  <tr>
+    <th>Bar Name</th>
+    <th>Address</th>
+    <th>ZIP Code</th>
+    <th>Swigged Count</th>
+    <th></th>
+  </tr>
+
+<%- @top_ten_swigs.each do |swig| %>
+  <tr>
+    <td><%= show_field_value(swig.bar, "name") %></td>
+    <td><%= show_field_value(swig.bar, "address") %></td>
+    <td><%= show_field_value(swig.bar, "zip_code") %></td>
+    <td><%= swig.reward_point %></td>
+    <td><%= link_to 'Show', swig_path(swig.id) %></td>
+  </tr>
+<%- end %>
+</table>

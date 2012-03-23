@@ -1,0 +1,2 @@
+module Bars::SettingsHelper
+end

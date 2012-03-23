@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/Fixtures.html
+
+one:
+  name: MyString
+  price: 1.5
+  description: MyText
+
+two:
+  name: MyString
+  price: 1.5
+  description: MyText
+# == Schema Information
+#
+# Table name: plans
+#
+#  id          :integer(4)      not null, primary key
+#  name        :string(255)
+#  price       :float
+#  description :text
+#  created_at  :datetime
+#  updated_at  :datetime
+#
+

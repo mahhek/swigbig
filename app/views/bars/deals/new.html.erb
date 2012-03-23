@@ -1,0 +1,22 @@
+<div style="display: none;" id="new_swig">
+  <%= render 'form', :url => bars_deals_path, :object => @deal, :method => :post %>
+  <div style="display: none;position: absolute; margin-left: 333px; margin-top: -297px;">
+    <h3>New Deal From Default Deals</h3>
+    <%= render 'form_deal_list', :url => create_from_default_deal_bars_deal_path(current_bar.id), :object => @bar_deal, :method => :post %>
+  </div>
+</div>
+<div id="type" style="display: block;">
+  <%= render :partial => "deal_type" %>
+</div>
+<%= link_to 'Back', bars_deals_path %>
+
+
+<script type="text/javascript">
+  function get_type(id)
+  {
+  $("#deal_deal_type_id").val(id);
+  $("#type").hide();
+  $("#new_swig").show();
+  };
+
+</script>

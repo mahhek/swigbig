@@ -1,0 +1,5 @@
+<div id="link">
+<h2><%= link_to "Sign up User", new_user_registration_path(:login=>"user"), :remote => true, :onclick => "jQuery('#sign-loader').show();" %></h2>
+<h2><%= link_to "Sign in Bar", new_bar_session_path(:login=>"bar"), :remote => true, :onclick => "jQuery('#sign-loader').show();" %></h2>
+<h2><%= link_to "Sign in Admin", new_admin_session_path(:login=>"admin"), :remote => true, :onclick => "jQuery('#sign-loader').show();" %></h2>
+</div>

@@ -1,0 +1,7 @@
+<div style="float: left;width: 100%;">
+  <%DealType.all.each do |type|%>
+    <div style="border: 1px solid black;cursor: pointer;float: left;width: 30%;padding:9%; " onclick="get_type(<%= type.id %>)">
+      <%= type.name %>
+    </div>
+  <%end%>
+</div>

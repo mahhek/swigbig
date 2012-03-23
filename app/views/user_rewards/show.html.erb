@@ -1,0 +1,98 @@
+<%- if @earned_reward %>
+  <h2>Earned Reward</h2>
+  <p>
+    <b>Name:</b>
+    <%= @earned_reward.reward.name if @earned_reward.reward %>
+  </p>
+
+  <p>
+    <b>Description:</b>
+    <%= @earned_reward.reward.description if @earned_reward.reward %>
+  </p>
+
+  <p>
+    <b>Bar Name:</b>
+    <%- if @earned_reward.swig %>
+      <%= @earned_reward.swig.bar.name if @earned_reward.swig.bar %>
+    <%- end %>
+  </p>
+
+  <p>
+    <b>Reward Point:</b>
+    <%= @earned_reward.reward.reward_point if @earned_reward.reward %>
+  </p>
+
+  <p>
+    <b>Total Earned:</b>
+    <%= @earned_reward.earned %>
+  </p>
+
+  <p>
+    <b>Reward Class:</b>
+    <%= @earned_reward.reward.reward_class.name if @earned_reward.reward and @earned_reward.reward.reward_class %>
+  </p>
+
+<%- elsif @unclaimed_reward %>
+  <%- total_unclaimed = @unclaimed_reward.total - @unclaimed_reward.earned %>
+  <h2>Unclaimed Reward</h2>
+  <p>
+    <b>Name:</b>
+    <%= @unclaimed_reward.reward.name if @unclaimed_reward.reward %>
+  </p>
+
+  <p>
+    <b>Description:</b>
+    <%= @unclaimed_reward.reward.description if @unclaimed_reward.reward %>
+  </p>
+
+  <p>
+    <b>Bar Name:</b>
+    <%- if @unclaimed_reward.swig %>
+      <%= @unclaimed_reward.swig.bar.name if @unclaimed_reward.swig.bar %>
+    <%- end %>
+  </p>
+
+  <p>
+    <b>Reward Point:</b>
+    <%= @unclaimed_reward.reward.reward_point if @unclaimed_reward.reward %>
+  </p>
+
+  <p>
+    <b>Total Unclaimed:</b>
+    <%= total_unclaimed %>
+  </p>
+
+  <p>
+    <b>Reward Class:</b>
+    <%= @unclaimed_reward.reward.reward_class.name if @unclaimed_reward.reward and @unclaimed_reward.reward.reward_class %>
+  </p>
+
+  <%- if current_user.friends and @unclaimed_reward.recipient_id.blank? and !@unclaimed_reward.reward.reward_class.name.eql?("Popularity") %>
+    <%= form_tag user_reward_share_reward_path(params[:id], total_unclaimed) do %>
+      <%- if flash[:errors] %>
+        <div class="error_messages">
+          <h2>Invalid Fields</h2>
+          <p>Correct the following errors and try again.</p>
+          <ul>
+            <%- flash[:errors].each do |error| %>
+              <li><%= error %></li>
+            <%- end %>
+          </ul>
+        </div>
+      <%- end %>
+      <p>
+        <b>Total Share:</b>
+        <%= text_field_tag "share_total" %>
+      </p>
+
+      <p>
+        <b>Share To:</b>
+        <%= select_tag "share_to", options_from_collection_for_select(current_user.friends, "id", "name") %>
+      </p>
+      <%= submit_tag "Share" %>
+    <%- end %>
+  <%- end %>
+<%- end %>
+
+
+<%= link_to 'Back', rewards_user_rewards_path %>

@@ -1,0 +1,30 @@
+<div>
+  <h3>New Deal</h3>
+  <%= form_for(object, :url => url, :method => method) do |f| %>
+    <%= f.error_messages %>
+
+    <div class="field">
+      <%= f.label "What's the deal?" %><br />
+      <%= f.text_field :name %>
+    </div>
+    <%#*<div class="field">%>
+      <%#= f.label :tier %>
+  <%#*<br />%>
+      <%#= f.select :tier, @tiers %>
+    <%#*</div>%>
+    <%#*<div class="field">%>
+      <%#= f.label :tipping_points %>
+  <%#*<br />%>
+      <%#= f.select :tipping_points, @tipping_points %>
+    <%#*</div>%>
+    <div class="field">
+      <%= f.label :day_of_week %><br />
+      <%= f.select :day_of_week, @days_of_week %>
+    </div>
+
+    <%=hidden_field_tag "deal[deal_type_id]"%>
+    <div class="actions">
+      <%= f.submit %>
+    </div>
+  <% end %>
+</div>

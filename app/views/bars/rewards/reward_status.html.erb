@@ -1,0 +1,16 @@
+<div style="float: left;width: 100%;">
+  <div style="border: 1px solid black;cursor: pointer;float: left;width: 30%;padding:9%; " >
+    <%= link_to "Activate Reward", "/reward_status_update?id=#{@reward.id}" %>
+    <%#= link_to "Activate Reward", :controller => "api/bars/rewrads" , :action => "reward_status_update", :id= => @reward.id %>
+
+  </div>
+  <div style="border: 1px solid black;cursor: pointer;float: left;width: 30%;padding:9%; " >
+    <%= link_to "Gift Reward", "/gift_reward?id=#{@reward.id}" %>
+  </div>
+  <div style="border: 1px solid black;cursor: pointer;float: left;width: 30%;padding:9%; " >
+    <%= link_to "Setup a new one", new_bars_reward_path %>
+  </div>
+</div>
+<div style="float: right;width: 100%;">
+  <%= link_to "close", "/bars/rewards" %>
+</div>

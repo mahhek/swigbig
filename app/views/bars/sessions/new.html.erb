@@ -1,0 +1,13 @@
+<%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
+  <%= f.text_field :email, :class => "text", :placeholder => "Email", :style=>"width: 225px;" %>
+  <%= f.password_field :password, :class => "text", :placeholder => "Password", :style=>"width: 225px;" %>
+  <%= f.submit "Go", :class => "button button_small" %>
+<% end %>
+
+<h2><%= link_to "User click here", new_user_session_path %></h2>
+<%#= render :partial => "devise/shared/links" %>
+
+<%- if devise_mapping.registerable? && controller_name != 'registrations' %>
+  <h2><%= link_to "Sign up", new_registration_path(resource_name) %></h2>
+<% end -%>
+<h2><%= link_to "Sign in Admin", new_admin_session_path %></h2>

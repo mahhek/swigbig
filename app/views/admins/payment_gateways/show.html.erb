@@ -1,0 +1,27 @@
+<p>
+  <b>Name:</b>
+  <%=h @payment_gateway.name %>
+</p>
+
+<p>
+  <b>Status:</b>
+  <%= @payment_gateway.status? ? "In Use" : "Inactive" %>
+</p>
+
+<p>
+  <b>Login:</b>
+  <%=h @payment_gateway.login  %>
+</p>
+
+<p>
+  <b>Password:</b>
+  <%=h @payment_gateway.password  %>
+</p>
+
+<p>
+  <b>Signature:</b>
+  <%=h @payment_gateway.signature  %>
+</p>
+
+<%= link_to 'Edit', edit_admins_payment_gateway_path(@payment_gateway) %> |
+<%= link_to 'Back', admins_payment_gateways_path %>

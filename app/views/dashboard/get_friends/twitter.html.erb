@@ -1,0 +1,9 @@
+<% unless @users.blank? %>
+  <% @users.each do |user| %>
+    <%= render :partial => "dashboard/get_friends/user_profile", :locals => {:user => user} %>
+  <% end %>
+<% else %>
+  <p>Sorry there are no friends found</p>
+<% end %>
+  <br />
+<%= link_to "Back", user_root_path %>

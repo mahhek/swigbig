@@ -1,0 +1,27 @@
+<h1>Listing Rewards</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Description</th>
+    <th>Reward Class</th>
+    <th>Reward Point</th>
+    <th></th>
+  </tr>
+
+<% @bar_rewards.each do |bar_reward| %>
+  <tr>
+    <td><%= show_field_value(bar_reward.reward, "name") %></td>
+    <td><%= show_field_value(bar_reward.reward, "description") %></td>
+    <td><%= show_field_value(bar_reward.reward.reward_class, "name") if bar_reward.reward %></td>
+    <td><%= show_field_value(bar_reward.reward, "reward_point") %></td>
+    <td><%= link_to 'Show', bars_reward_path(bar_reward.reward) %> |
+    <%= link_to 'Edit', edit_bars_reward_path(bar_reward.reward) %> |
+    <%= link_to 'Destroy', bars_reward_path(bar_reward.reward), confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Reward', new_bars_reward_path %>

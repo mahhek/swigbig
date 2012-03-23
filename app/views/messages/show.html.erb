@@ -1,0 +1,15 @@
+<h1>Message</h1>
+
+<% @messages.each do |message| %>
+<b><%=h message.from.id.eql?(current_user.id) ? "Me" : message.from.name %></b>
+<p><%=h message.body %></p>
+<% end %>
+
+<h3>Reply</h3>
+<%= form_for :message, :url => message_path(@message), :method => :put do |f| %>
+  <%= f.text_area :body, :value => "" %>
+
+  <%= f.submit "Send" %>
+<% end %>
+
+<%= link_to "Back", :back %>

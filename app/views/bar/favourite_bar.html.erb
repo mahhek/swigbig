@@ -1,0 +1,21 @@
+<h1>Favourite Bar</h1>
+
+<p>
+  <b>Bar Name:</b>
+  <%= show_field_value(@favourite_bar.bar, "name") if @favourite_bar %>
+</p>
+
+<p>
+  <b>Address:</b>
+  <%= show_field_value(@favourite_bar.bar, "address") if @favourite_bar %>
+</p>
+
+<p>
+  <b>ZIP Code:</b>
+  <%= show_field_value(@favourite_bar.bar, "zip_code") if @favourite_bar %>
+</p>
+
+<p>
+  <b>Swigged:</b>
+  <%= @favourite_bar.reward_point if @favourite_bar %>
+</p>
