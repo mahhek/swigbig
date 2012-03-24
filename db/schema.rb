@@ -93,7 +93,6 @@ ActiveRecord::Schema.define(:version => 20120323070510) do
     t.integer  "reward_id"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.boolean  "is_active"
   end
 
   add_index "bar_rewards", ["bar_id", "reward_id"], :name => "index_bar_rewards_on_bar_id_and_reward_id"
