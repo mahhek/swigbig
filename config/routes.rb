@@ -91,11 +91,11 @@ Swigbig::Application.routes.draw do
   match '/api/invite_user' => "api/bars#invite_user", :via => :post
   match '/api/bar_directory' => "api/bars#bar_directory", :via => :get
   match '/invite_friends' => 'dashboard#invite_friends', :via => :post, :as => 'invite_friends'
-  match '/deal_status' => 'api/bars/deals#deal_status', :via => :get
-  match '/deal_status_update' => 'api/bars/deals#deal_status_update', :via => :get
+  match '/deal_status' => 'api/bars/deals#deal_status', :via => :get, :as => 'deal_status'
+  match '/deal_status_update' => 'api/bars/deals#deal_status_update', :via => :get, :as => 'deal_status_update'
 
-  match '/reward_status' => 'api/bars/rewards#reward_status', :via => :get
-  match '/reward_status_update' => 'api/bars/rewards#reward_status_update', :via => :get
+  match '/reward_status' => 'api/bars/rewards#reward_status', :via => :get , :as => 'reward_status'
+  match '/reward_status_update' => 'api/bars/rewards#reward_status_update', :via => :get, :as => 'reward_status_update'
   
   resources :swigs, :only => :show do
     collection do

@@ -64,8 +64,8 @@ namespace :bundler do
   end
 end
 
-#after 'deploy:update_code' do
-#  run "cd #{release_path}; RAILS_ENV=production rake assets:precompile"
-#end
+after 'deploy:update_code' do
+  run "cd #{release_path}; RAILS_ENV=production rake assets:precompile"
+end
 
 after 'deploy:update_code', 'bundler:bundle_new_release'
