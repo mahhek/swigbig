@@ -13,12 +13,7 @@ Swigbig::Application.routes.draw do
   get "/faq", :to => "home#faq", :as => :faq
   get "/contact", :to => "home#contact", :as => :contact
   get "/bars/profile", :to => "bars/bars#show", :as => :bar_profile
-  match '/deal_status' => 'api/bars/deals#deal_status', :via => :get
-  match '/deal_status_update' => 'api/bars/deals#deal_status_update', :via => :get
-  
-  match '/reward_status' => 'api/bars/rewards#reward_status', :via => :get
-  match '/reward_status_update' => 'api/bars/rewards#reward_status_update', :via => :get
-  
+ 
   match '/find_deals' => 'api/bars/deals#find_deals', :via => :get
   devise_for :users, :controllers => { :omniauth_callbacks => "devise/omniauth_callbacks" }
   devise_for :bars #, :controllers => { :sessions => "bars/sessions" }
@@ -67,11 +62,19 @@ Swigbig::Application.routes.draw do
         post "create_from_default_deal"
         put "update_from_default_deal/:deal_id", :action => :update_from_default_deal, :as => :update_from_default_deal
       end
+      collection do
+        get 'deal_status'
+        get 'deal_status_update'
+      end
     end
     resources :rewards do
       member do
         post "create_from_default_reward"
         put "update_from_default_reward/:reward_id", :action => :update_from_default_reward, :as => :update_from_default_reward
+      end
+      collection do
+        get 'reward_status'
+        get 'reward_status_update'
       end
     end
 
@@ -88,7 +91,12 @@ Swigbig::Application.routes.draw do
   match '/api/invite_user' => "api/bars#invite_user", :via => :post
   match '/api/bar_directory' => "api/bars#bar_directory", :via => :get
   match '/invite_friends' => 'dashboard#invite_friends', :via => :post, :as => 'invite_friends'
+  match '/deal_status' => 'api/bars/deals#deal_status', :via => :get
+  match '/deal_status_update' => 'api/bars/deals#deal_status_update', :via => :get
 
+  match '/reward_status' => 'api/bars/rewards#reward_status', :via => :get
+  match '/reward_status_update' => 'api/bars/rewards#reward_status_update', :via => :get
+  
   resources :swigs, :only => :show do
     collection do
       get "top_ten_swigs"
