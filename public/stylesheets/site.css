@@ -483,6 +483,26 @@ input[type=text], input[type=password], input[type=email]
 {
     margin:3px 0 10px;
 }
+#sign_up
+{
+    display:none;
+    background:#fff;
+    width:250px;
+    padding:10px;
+    position:absolute;
+    right:0;
+    top:50px;
+    z-index:100000;
+    border:1px solid #EDEAE6;
+    border-top:none;
+    border-radius:0 0 3px 3px;
+    -moz-border-radius:0 0 3px 3px;
+    -webkit-border-radius:0 0 3px 3px;
+}
+#sign_up input
+{
+    margin:3px 0 10px;
+}
 
 a img
 {
