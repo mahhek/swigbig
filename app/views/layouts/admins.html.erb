@@ -40,6 +40,7 @@
                 <%= link_to "Rewards", admins_rewards_path, :id => "rewards", :class=> "#{'active' if session[:button].eql?('rewards')}" %>
                 <%= link_to "Reward Classes", admins_reward_classes_path, :id => "reward_class", :class=> "#{'active' if session[:button].eql?('reward_class')}" %>
                 <%= link_to "Payment Gateways", admins_payment_gateways_path, :id => "payment_gateway", :class=> "#{'active' if session[:button].eql?('payment_gateway')}" %>
+                <%= link_to "Contact", contacts_path, :id => "contact", :class=> "#{'active' if session[:button].eql?('Contact')}" %>
                 <%= link_to "Sign Out", destroy_admin_session_path, :method => :delete %>
               </div>
             </div>

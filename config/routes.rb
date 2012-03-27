@@ -1,5 +1,7 @@
 Swigbig::Application.routes.draw do
 
+  resources :contacts
+
   get "favourite_bar", :to => "bar#favourite_bar", :as => :favourite_bar
 
   get "/dashboard/invite", :to => "dashboard#invite", :as => :invite_user
