@@ -66,13 +66,13 @@
                 <div id="sign-panel">
                   <%= yield %>
                 </div>
-                <!--
+                
                 <div id="link">
                 <%= link_to "Sign in Admin", new_admin_session_path(:login=>"admin"), :remote => true, :onclick => "jQuery('#sign-loader').show();" %>
                 <%= link_to "Sign in Bar", new_bar_session_path(:login=>"bar"), :remote => true, :onclick => "jQuery('#sign-loader').show();" %>
-                <%= link_to "Sign up User", new_user_registration_path(:login=>"user"), :remote => true, :onclick => "jQuery('#sign-loader').show();" %>
+                <%#= link_to "Sign up User", new_user_registration_path(:login=>"user"), :remote => true, :onclick => "jQuery('#sign-loader').show();" %>
                 </div>
-                -->
+                
                 <div id="sign-loader"  style="display: none; position: fixed; margin-left: 207px; margin-top: -240px;">
                   <%= image_tag "/images/ajax-loader.gif" %>
                 </div>
