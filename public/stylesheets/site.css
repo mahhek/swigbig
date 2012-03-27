@@ -350,6 +350,14 @@ input[type=text], input[type=password], input[type=email]
     margin-left: 7px;
     padding: 2px;
 }
+.user_details  a {
+    border: none;
+    width: 85%;
+}
+.user_details image {
+    margin-left: 7px;
+    padding: 2px;
+}
 .header_links li.account
 {
     float:right;
@@ -483,7 +491,7 @@ input[type=text], input[type=password], input[type=email]
 {
     margin:3px 0 10px;
 }
-#sign_up
+.user_details
 {
     display:none;
     background:#fff;
@@ -499,7 +507,7 @@ input[type=text], input[type=password], input[type=email]
     -moz-border-radius:0 0 3px 3px;
     -webkit-border-radius:0 0 3px 3px;
 }
-#sign_up input
+.user_details input
 {
     margin:3px 0 10px;
 }

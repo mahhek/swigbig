@@ -1,8 +1,11 @@
 class DashboardController < ApplicationController
   before_filter :authenticate_user!
-  
+#  layout "landing_page"
   def index
     session[:user_type_login] = nil
+    @bar_deals = BarDeal.all
+    @cities = Bar.select("city").all
+    @top_ten_swigs = Swig.get_top_ten_swigers
     @status = current_user.status.order("created_at DESC")
     @new_status = Status.new
     session[:button] = "home"
