@@ -7,6 +7,8 @@ class Devise::SessionsController < ApplicationController
   # GET /resource/sign_in
   def new
     session[:user_type_login] = params[:login]
+    @bar_deals = BarDeal.all
+    @cities = Bar.select("city").all
     @top_ten_swigs = Swig.get_top_ten_swigers
     if params[:login].eql?("admin")
       respond_to do |format|

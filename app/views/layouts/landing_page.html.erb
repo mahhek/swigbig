@@ -19,6 +19,17 @@
     <script src="/javascripts/extras.js" type="text/javascript"></script>
     <script src="/javascripts/jquery_002.js" type="text/javascript"></script>
     <script type="text/javascript">
+      function update_zip_field(ele){
+        elm = $("#zip_code");
+        val = elm.val();
+        if(val == "Zip Code"){
+          elm.val("");
+        }
+        else if(val == ""){
+          elm.val("Zip Code");
+        }        
+      }
+
       function getTopTenSwigers() {
       $.ajax({
       url: "/swigs/top_ten_swigers",
@@ -104,17 +115,64 @@
             <% flash.each do |key, msg| %>
               <%= content_tag :div, msg, :id => key %>
             <% end %>
-            <div id="map_canvas-container" class="no_notch">
-              <img src="/images/swig-main-copy.gif" style="float: left;">
-            </div>
+<%#*<div id="map_canvas-container" class="no_notch">%>
+<%#*<img src="/images/swig-main-copy.gif" style="float: left;" />%>
+<%#*</div>%>
+
             <div class="main_content_panel under_map">
+
+              <div style="width:100%;float:left;margin-top: 20px;">
+                <div style="width:28%;float:left;margin-left:10px;">
+                  <%= form_for :search, :url => "#" do |f| %>
+                    <%= select_tag( "city", options_from_collection_for_select(@cities,:city, :city), {:prompt => '-- Select City --', :style => "width:175px;"} )%><br />
+                    
+                    <div style="border:1px solid;margin-left: 2px;margin-bottom:20px;margin-top:20px;background-color: #c0c0c0;width:160px;float:left;font-weight: bold;text-align: center;">Narrow it Down</div>
+
+                    <%= text_field_tag "zip_code", "Zip Code", :onfocus => "update_zip_field(this)", :onblur => "update_zip_field(this)"  %>
+                    <%= f.submit "Search" %>
+                  <% end %>
+
+                </div>
+                <div style="width:68%;float:left;margin-right: 5px;">
+                  <table style="text-align: center;width:100%;float:left;border: 1px solid #000000;max-height: 5px !important;overflow-y : scroll;">
+                    <tbody>
+                      <tr style="background-color: #c0c0c0">
+                        <th style="border:1px solid;">Deals</th>
+                        <th style="border:1px solid;">SwigBIG Deals </th>
+                        <th style="border:1px solid;">Bar Name</th>
+                        <th style="border:1px solid;">Distance</th>
+                      </tr>
+                      <% count = 0 %>
+                      <% @bar_deals.each do|bar_deal| %>
+                        <% count+= 1 %>
+                        <tr style="background-color:<%= count%2 == 0 ? '#c0c0c0' : 'white'  %>">
+                          <td style="border:1px solid;">
+                            <%= bar_deal.deal.name %>
+                          </td>
+                          <td style="border:1px solid;">
+                            Y
+                          </td>
+                          <td style="border:1px solid;">
+                            <%= bar_deal.bar.name%>
+                          </td>
+                          <td style="border:1px solid;">
+                            -
+                          </td>
+                        </tr>
+                      <% end %>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+
+
               <div id="checkin-history-container">
                 <ul style="overflow: hidden; height: 570px;" class="drink-specials">
-                  <%- @top_ten_swigs.each do |swig| %>
+                  <% @top_ten_swigs.each do |swig| %>
                     <li style="margin-top: 0pt;" class="wine">
                       <a class="deal_info" href="#"><%= swig.user.full_name %> has been checked in at <%= swig.bar.name %></a>
                       <a class="deal_info_right" style="float: right;" href="#">
-                        <img src="/images/pin.png" style="margin-right: 10px;">Lorem ipsum.
+                        <img src="/images/pin.png" style="margin-right: 10px;" />Lorem ipsum.
                       </a>
                       <span class="deal_venue">
                         at <%= swig.updated_at.strftime("%H:%M") %> o'clock
@@ -148,7 +206,15 @@
         <img src="/images/fb.png" width="50" height="50"/>
         <img src="/images/twitter.png" width="50" height="50" />
       </div>
-      <div class="feed">Live Swig Feed: James J. just swigged at Duffy's in Chicago</div>
-    </div>
+      <div class="feed">Live Swig Feed: James J. just swigged at Duffy's in Chicago
+      </div>
+      <div class="feed" style="margin-left:325px;">
+        <%= link_to "Copyright", "" %> |
+        <%= link_to "FAQ", "" %> |
+        <%= link_to "About Us", "" %> |
+        <%= link_to "Contact Us", "" %> | 
+        <%= link_to "Bar Owner?", "" %>
+      </div>
 
+    </div>
   </body></html>
