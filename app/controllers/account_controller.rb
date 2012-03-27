@@ -1,7 +1,6 @@
 class AccountController < ApplicationController
   before_filter :authenticate_user!
   before_filter :find_user
-  
   def show
     session[:button] = "my_account"
   end

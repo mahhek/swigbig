@@ -98,7 +98,8 @@ class Devise::RegistrationsController < ApplicationController
 
   # GET /resource/edit
   def edit
-    render_with_scope :edit    
+    #    render_with_scope :edit
+    render :layout =>"application"
   end
 
   # PUT /resource
@@ -187,25 +188,25 @@ class Devise::RegistrationsController < ApplicationController
   
   protected
 
-      # Render a view for the specified scope. Turned off by default.
-      # Accepts just :controller as option.
-      def render_with_scope(action, path=self.controller_path)
-        require 'pp'
-        pp devise_mapping.scoped_path
-        layout = "bars"
-        if devise_mapping.scoped_path == "users"
-          layout = 'application'
-        end
-        if self.class.scoped_views?
-          begin
-            render :template => "#{devise_mapping.scoped_path}/#{path.split("/").last}/#{action}"#, :layout => layout
-          rescue ActionView::MissingTemplate
-            render :template => "#{path}/#{action}"
-          end
-        else
-          render :template => "#{path}/#{action}"
-        end
+  # Render a view for the specified scope. Turned off by default.
+  # Accepts just :controller as option.
+  def render_with_scope(action, path=self.controller_path)
+    require 'pp'
+    pp devise_mapping.scoped_path
+    layout = "bars"
+    if devise_mapping.scoped_path == "users"
+      layout = 'application'
+    end
+    if self.class.scoped_views?
+      begin
+        render :template => "#{devise_mapping.scoped_path}/#{path.split("/").last}/#{action}"#, :layout => layout
+      rescue ActionView::MissingTemplate
+        render :template => "#{path}/#{action}"
       end
+    else
+      render :template => "#{path}/#{action}"
+    end
+  end
     
 
 end

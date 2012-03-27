@@ -85,11 +85,21 @@
       </div>
       <div id="all_content">
         <div class="container">
-
+          <div class="side-column">
+            <div class="sidebar_panel" style="margin-top: 10px;">
+              <%= link_to image_tag("/images/available_on_app_store.png"), "#"  %>
+            </div>
+            <div class="sidebar_panel">
+              <a href="#" onclick="return recordOutboundLink(this, 'Outbound Links', 'android.com');"><img src="/images/available_on_android.png"></a>
+            </div>
+            <div id="filter-drink-types" class="filter-container sidebar_panel" style="padding: 18px; background-image: none;">
+              <h3 style="font-size: 14px;">
+                The more people swigging, the better the deal</h3>
+            </div>
+          </div>
           <%=yield%>
           <div class="clearfix">
           </div>
-
         </div>
       </div>
       <div class="push"></div>
