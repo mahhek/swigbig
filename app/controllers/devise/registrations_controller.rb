@@ -3,9 +3,10 @@ class Devise::RegistrationsController < ApplicationController
   prepend_before_filter :authenticate_scope!, :only => [:edit, :update, :destroy]
   include Devise::Controllers::InternalHelpers
   layout "sign_up", :only => [:new, :create, :edit, :update]
-  
+  #  layout "landing_page", :only => [:new, :create, :edit, :update]
+  before_filter :get_default_attributes
   #layout "bars", :only => [:edit, :update]
-  #layout "application", :only => [:edit, :update]
+  #  layout "application", :only => [:edit, :update]
   
   # GET /resource/sign_up
   def new
@@ -206,6 +207,14 @@ class Devise::RegistrationsController < ApplicationController
     else
       render :template => "#{path}/#{action}"
     end
+  end
+
+  private
+
+  def get_default_attributes
+    @bar_deals = BarDeal.all
+    @cities = Bar.select("city").all
+    @top_ten_swigs = Swig.get_top_ten_swigers
   end
     
 
