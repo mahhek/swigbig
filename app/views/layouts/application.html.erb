@@ -61,7 +61,7 @@
             <li><%= link_to image_tag("/images/logo-default.jpg"), "/" %></li>
             <li style="margin-left: 20PX;margin-top:40px;font-size: 30px;">on<b> <%=Date.today.strftime("%A")%> </b></li>
             <li id="myAccount" class="account">
-              <%= link_to "Welcome back #{current_user.name ? current_user.name : ""}","#",:onclick => "jQuery('#user_details').toggle();" %>
+              <%= link_to "Welcome back #{current_user.name unless current_user.name.blank?}","#",:onclick => "jQuery('#user_details').toggle();" %>
               <div id="user_details" class="user_details">
                 <%= link_to "Rewards", rewards_user_rewards_path, :id=>"reward", :class=> "#{'active' if session[:button].eql?('reward')}" %>
                 <%= link_to "My Account", account_path, :id=>"my_account", :class=> "#{'active' if session[:button].eql?('my_account')}" %>
