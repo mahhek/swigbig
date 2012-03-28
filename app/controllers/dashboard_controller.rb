@@ -1,6 +1,5 @@
 class DashboardController < ApplicationController
   before_filter :authenticate_user!
-#  layout "landing_page"
   def index
     session[:user_type_login] = nil
     @bar_deals = BarDeal.all

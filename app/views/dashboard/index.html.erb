@@ -1,16 +1,4 @@
 
-    <div class="side-column">
-      <div class="sidebar_panel" style="margin-top: 10px;">
-        <%= link_to image_tag("/images/available_on_app_store.png"), "#"  %>
-      </div>
-      <div class="sidebar_panel">
-        <a href="#" onclick="return recordOutboundLink(this, 'Outbound Links', 'android.com');"><img src="/images/available_on_android.png"></a>
-      </div>
-      <div id="filter-drink-types" class="filter-container sidebar_panel" style="padding: 18px; background-image: none;">
-        <h3 style="font-size: 14px;">
-          The more people swigging, the better the deal</h3>
-      </div>
-    </div>
     <div class="main_content">
       <% flash.each do |key, msg| %>
         <%= content_tag :div, msg, :id => key %>
