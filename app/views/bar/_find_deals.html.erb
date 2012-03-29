@@ -1,0 +1,38 @@
+<div style="float: left;margin-top: 20px;padding: 10px;width: 100%;">
+  <%if @deals.size > 0%>
+    <h1>Standard Swigs</h1>
+    <%@deals.each do |bar_deal|%>
+      <% if bar_deal.deal.deal_type %>
+        <%if bar_deal.deal.deal_type.name == "Standard" %>
+          <div style="width: 100%;float: left;">
+            <div style="width: 49%;float: left;">
+              <%= bar_deal.deal.name %>
+            </div>
+          </div>
+        <%end%>
+      <% else %>
+        <b>No Standard Swigs added Yet!</b>
+      <%end%>
+
+    <%end%>
+  </div>
+  <div style="float: left;margin-top: 20px;padding: 10px;width: 100%;">
+    <h1>Big Swigs</h1>
+    <%@deals.each do |bar_deal|%>
+      <% if bar_deal.deal.deal_type %>
+        <%if bar_deal.deal.deal_type.name == "Big" %>
+          <div style="width: 100%;float: left;">
+            <div style="width: 49%;float: left;">
+              <%= bar_deal.deal.name %>
+            </div>
+          </div>
+        <%end%>
+      <% else %>
+        <b>No Big Swigs added Yet!</b>
+      <%end%>
+    <%end%>
+  </div>
+
+<%else%>
+  <h3>Now Swigs yet</h3>
+<%end%>

@@ -2,7 +2,7 @@ class DashboardController < ApplicationController
   before_filter :authenticate_user!
   def index
     session[:user_type_login] = nil
-    @bar_deals = BarDeal.all
+    @bar_deals = BarDeal.where(is_active: true)
     @cities = Bar.select("city").all
     @top_ten_swigs = Swig.get_top_ten_swigers
     @status = current_user.status.order("created_at DESC")

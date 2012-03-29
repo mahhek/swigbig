@@ -162,7 +162,7 @@
 
                     <div style="border:1px solid;margin-left: 2px;margin-bottom:20px;margin-top:20px;background-color: #c0c0c0;width:160px;float:left;font-weight: bold;text-align: center;">Narrow it Down</div>
 
-                    <%= text_field_tag "zip_code", "Zip Code", :onfocus => "update_zip_field(this)", :onblur => "update_zip_field(this)"  %>
+                    <%= text_field_tag "zip_code", "Zip Code", :onfocus => "update_zip_field(this)", :onblur => "update_zip_field(this)",:style => "width:175px;"  %>
                     <%= f.submit "Search" %>
                   <% end %>
 

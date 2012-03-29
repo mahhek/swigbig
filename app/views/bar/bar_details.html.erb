@@ -1,0 +1,18 @@
+<div>
+  <%= link_to "Monday", "/find_deals?day=1&user=true", :remote => true %>
+  <%= link_to "Tuesday", "/find_deals?day=2&user=true", :remote => true %>
+  <%= link_to "Wednesday", "/find_deals?day=3&user=true", :remote => true %>
+  <%= link_to "Thursday", "/find_deals?day=4&user=true", :remote => true %>
+  <%= link_to "Friday","/find_deals?day=5&user=true", :remote => true %>
+  <%= link_to "Saturday", "/find_deals?day=6&user=true", :remote => true %>
+  <%= link_to "Sunday", "/find_deals?day=7&user=true", :remote => true %>
+</div>
+
+<div id="data">
+  <%=render :partial => "/bar/find_deals"%>
+</div>
+<%if @deal%>
+  <script type="text/javascript">
+
+  </script>
+<%end%>

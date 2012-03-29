@@ -99,6 +99,9 @@ Swigbig::Application.routes.draw do
   match '/reward_status' => 'api/bars/rewards#reward_status', :via => :get , :as => 'reward_status'
   match '/reward_status_update' => 'api/bars/rewards#reward_status_update', :via => :get, :as => 'reward_status_update'
   
+
+  match '/bar_details' => 'api/bar#bar_details', :via => :get, :as => 'bar_detail'
+
   resources :swigs, :only => :show do
     collection do
       get "top_ten_swigs"
