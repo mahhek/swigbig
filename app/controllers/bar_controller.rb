@@ -1,5 +1,5 @@
 class BarController < ApplicationController
-  before_filter :authenticate_user!
+  before_filter :authenticate_user!, :except => :bar_details unless current_subdomain.nil?
 
   def favourite_bar
     @favourite_bar = Swig.order("reward_point DESC").first

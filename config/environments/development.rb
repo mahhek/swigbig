@@ -29,10 +29,21 @@ Swigbig::Application.configure do
   config.assets.debug = true
 
   config.action_mailer.default_url_options = { :host => Rails.root.to_s }
+
+  #  config.tld_size = 0 # sets for current environment
+  #  config.tld_sizes = {:development => 1,
+  #    :test => 0,
+  #    :production => 1} # set all at once (also the defaults)
 end
 
 ActiveMerchant::Billing::Base.mode = :test
+SubdomainFu.configure do |config|
+ config.tld_sizes = {:development => 0,
+                     :test => 0,
+                     :production => 1}
+end
 
 gateway = ActiveMerchant::Billing::AuthorizeNetGateway.new(
   :login => 'TestMerchant',
   :password => 'password')
+

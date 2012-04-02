@@ -1,7 +1,12 @@
 class HomeController < ApplicationController
   
   def index
-    redirect_to new_user_session_path
+    if current_subdomain
+      @bar = Bar.find_by_name(current_subdomain)
+      redirect_to "/bar_details?bar_id={@bar.id}"
+    else
+      redirect_to new_user_session_path
+    end
   end
 
   def faq

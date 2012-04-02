@@ -8,6 +8,7 @@ class ApplicationController < ActionController::Base
   before_filter :get_active_logo_and_slogan
   before_filter :get_twitter
 
+  
   def fb_update_status(status)
     begin            
       @graph = Koala::Facebook::GraphAPI.new(session["fb_oauth"])
@@ -20,6 +21,8 @@ class ApplicationController < ActionController::Base
     # https://github.com/arsduo/koala/wiki/Graph-API
     ##
   end
+
+
 
   def facebook_friends
     unless session["fb_oauth"].blank?
