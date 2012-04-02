@@ -1,5 +1,7 @@
 class BarController < ApplicationController
-  before_filter :authenticate_user!, :except => :bar_details unless current_subdomain.nil?
+  before_filter :authenticate_user!, :except => :bar_details
+  before_filter :bar_sub_domain, :only => :bar_details
+  layout "landing_page", :only => :bar_details 
 
   def favourite_bar
     @favourite_bar = Swig.order("reward_point DESC").first
@@ -7,24 +9,36 @@ class BarController < ApplicationController
   end
 
   def bar_details
-    if params[:deal_id]
-      deal_data
-    end
-    if params[:bar_id]
-      bar_data
-    end
+    bar_data
   end
 
 
   private
 
-  def deal_data
-    @deal = Deal.find_by_id(params[:deal_id])
-    @bar = @deal.bar_deals.first.bar
-    @deals = @bar.bar_deals.select{|deal1| deal1.deal.day_of_week == @deal.day_of_week and deal1.is_active == true}
-  end
+
   def bar_data
-    @bar = Bar.find_by_id(params[:bar_id])
-    @deals = @deals = @bar.bar_deals.select{|deal1| deal1.deal.day_of_week == 1 and deal1.is_active == true}
+    if params[:deal_id]
+      @deal = Deal.find_by_id(params[:deal_id])
+      @bar = @deal.bar_deals.first.bar
+      @deals = @bar.bar_deals.select{|deal1| deal1.deal.day_of_week == @deal.day_of_week and deal1.is_active == true}
+    elsif params[:bar_id]
+      @bar = Bar.find_by_id(params[:bar_id])
+      @deals = @deals = @bar.bar_deals.select{|deal1| deal1.deal.day_of_week == 1 and deal1.is_active == true}
+    end
+    default_data(@bar.id)
   end
+  
+  def default_data(id)
+    @bar_deals = BarDeal.where(is_active: true, bar_id: id)
+    @cities = Bar.select("city").all
+    @top_ten_swigs = Swig.get_top_ten_swigers
+  end
+
+  def bar_sub_domain
+    if current_subdomain
+      @bar = Bar.find_by_name(current_subdomain)
+      params[:bar_id] = @bar.id
+    end
+  end
+  
 end

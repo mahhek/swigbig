@@ -37,6 +37,8 @@ gem 'koala'
 gem 'twitter'
 gem 'whenever'#, :require => false
 gem "prawn-qrcode"
+#gem 'subdomain-fu', '1.0.0.beta2'
+gem 'subdomain-fu', :git => "git://github.com/nhowell/subdomain-fu.git"
 #gem  'nokogiri', '1.5.0'
 #gem 'jrails'
 # Gems used only for assets and not required
