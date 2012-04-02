@@ -64,7 +64,6 @@ class Bars::DealsController < ApplicationController
     elsif params[:deal]
       @new_deal = Deal.new(params[:deal])
       @new_deal.is_admin = false
-
       if @new_deal.save
         bar_deal = BarDeal.where(["bar_id = ? AND deal_id = ?", current_bar.id, params[:deal_id]]).first
         bar_deal.destroy if bar_deal

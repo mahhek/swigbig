@@ -1,7 +1,7 @@
 class HomeController < ApplicationController
   
   def index
-    if current_subdomain
+    if current_subdomain and current_user
       @bar = Bar.find_by_name(current_subdomain)
       redirect_to "/bar_details"
     else

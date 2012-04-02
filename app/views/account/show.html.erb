@@ -1,5 +1,31 @@
-<h3>My Account</h3>
+<div style="float: left;width: 100%;">
+  <div style="float: left;width: 20%;">
+    <h3><%= current_user.email %></h3>
+    <p style="float: left;width:100%;border: 1px solid black;"><%= link_to "Invite Friends","#"  %></p>
+    <p style="float: left;width:100%;border: 1px solid black;"><%= link_to "Change Email","#"%></p>
+    <p style="float: left;width:100%;border: 1px solid black;"><%= link_to "Change Password","#"%></p>
+    <p style="float: left;width:100%;border: 1px solid black;"><%= link_to "Contact Preferences","#"%></p>
+    <p style="float: left;width:100%;border: 1px solid black;"><%= link_to "Delete Account","#"%></p>
 
-<%= render :partial => "shared/user_profile" %>
+  </div>
+  <div style="float: left;width: 60%;margin-left: 3%;">
+    <h3>Profile Stats</h3>
+    <div style="width:100%;border: 1px solid black;">
+      <%= render :partial => "shared/user_profile" %>
 
-<p><%= link_to "Edit", edit_user_registration_path %></p><%=%>
+      <p><%= link_to "Edit", edit_user_registration_path %></p><%=%>
+    </div>
+  </div>
+  <div style="float: left;width: 16%;margin-left: 1%;">
+    <h3>Friends Swigging</h3>
+    <%(0..7).each do |a|%>
+      <p style="float: left;height:40px;width:44%;border: 1px solid black;margin-left: 2px;">
+        <%= a %>
+      </p>
+    <%end%>
+  </div>
+</div>
+
+<script type="text/javascript">
+  $('.side-column').hide();
+</script>

@@ -214,7 +214,7 @@ Devise.setup do |config|
   config.scoped_views = true
   
   #  config.omniauth :facebook, "277531728941437", "9b74ca2e531e1d78640223f4b8cd4cb3"
-  config.omniauth :facebook, "212643098797776", "b338c6c4f6b39b06dad83664398ff012"
+  config.omniauth :facebook, "279413525466996", "2a51c0f4b3769ed16efd663d4a81d44f"
   #  config.omniauth :twitter, "XNkbnBWRGmHY93LUFM5g", "NXObVWYWdFsSL4AT3lNyNMz6cKjA5CBfonpvY0Q"
   config.omniauth :twitter, "ljTiP8tlNC2VjKIzQsP4g", "S8lx1slu56Wr3LscMdBNfqtygvRfxLhLsIjFQa1M2EA"
   config.omniauth :open_id, OpenID::Store::Filesystem.new('/tmp'), :name => 'google', :identifier => 'https://www.google.com/accounts/o8/id'

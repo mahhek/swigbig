@@ -1,7 +1,8 @@
 class BarController < ApplicationController
   before_filter :authenticate_user!, :except => :bar_details
+  before_filter :authenticate_bar!, :only => :bar_details
   before_filter :bar_sub_domain, :only => :bar_details
-  layout "landing_page", :only => :bar_details 
+  layout "bars", :only => :bar_details
 
   def favourite_bar
     @favourite_bar = Swig.order("reward_point DESC").first
