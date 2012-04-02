@@ -60,7 +60,11 @@ Swigbig::Application.configure do
 
   config.action_mailer.default_url_options = { :host => 'cold-wind-2815.herokuapp.com' }
 end
-
+SubdomainFu.configure do |config|
+ config.tld_sizes = {:development => 0,
+                     :test => 0,
+                     :production => 2}
+end
 ActiveMerchant::Billing::Base.mode = :production
 
 gateway = ActiveMerchant::Billing::AuthorizeNetGateway.new(
