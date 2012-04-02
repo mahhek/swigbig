@@ -1,4 +1,10 @@
 GIT
+  remote: git://github.com/nhowell/subdomain-fu.git
+  revision: c6fbf945cf3f4ab344f9c8e0604dc5dcca9ee6cf
+  specs:
+    subdomain-fu (1.0.0.beta2)
+
+GIT
   remote: git@github.com:hendra/amistad.git
   revision: 38cfb793e63018dc7be3a138732321bcc5122cfc
   specs:
@@ -343,6 +349,7 @@ DEPENDENCIES
   rqrcode-rails3
   ruby-debug19
   sass-rails (~> 3.1.0)
+  subdomain-fu!
   therubyracer
   turn
   twitter
