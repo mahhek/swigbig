@@ -3,6 +3,7 @@ class CreateBarRewards < ActiveRecord::Migration
     create_table :bar_rewards do |t|
       t.integer :bar_id
       t.integer :reward_id
+      
 
       t.timestamps
     end

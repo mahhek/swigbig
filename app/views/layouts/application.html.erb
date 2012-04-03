@@ -60,6 +60,9 @@
           <ul class="header_links">
             <li><%= link_to image_tag("/images/logo-default.jpg"), "/" %></li>
             <li style="margin-left: 20PX;margin-top:40px;font-size: 30px;">on<b> <%=Date.today.strftime("%A")%> </b></li>
+           <!--
+              <%#*<li style="margin-left: 20PX;margin-top:40px;font-size: 30px;">on<b> <%=Date.today.in_time_zone('America/Los_Angeles').strftime("%A")%></b></li>%>
+              -->
             <li id="myAccount" class="account">
               <%= link_to "Welcome back #{current_user.name unless current_user.nil? and current_user.name.blank?}","#",:onclick => "jQuery('#user_details').toggle();" %>
               <div id="user_details" class="user_details">
@@ -72,10 +75,10 @@
 <%#= link_to_function "Login", "jQuery('#sign_in').toggle();" %>
 <%#*</li>%>
             <li id="myAccount" class="account">
-              <%= link_to "Learn more", new_user_registration_path(:login=>"user"), :remote => true, :onclick => "jQuery('#sign_in').toggle();jQuery('#sign-loader').show();" %>
+              <%= link_to "Learn more", "#" %>
             </li>
             <li id="myAccount" class="account">
-              <%= link_to "Notifications", "jQuery('#sign_in').toggle();" %>
+              <%= link_to "Notifications", "#" %>
             </li>
             <li id="myAccount" class="account">
               <%= link_to "Home", "/" %>

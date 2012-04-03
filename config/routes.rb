@@ -15,6 +15,7 @@ Swigbig::Application.routes.draw do
   get "/faq", :to => "home#faq", :as => :faq
   get "/contact", :to => "home#contact", :as => :contact
   get "/bars/profile", :to => "bars/bars#show", :as => :bar_profile
+  get "/show_bar", :to => "bar#show", :as => :show_bar
  
   match '/find_deals' => 'api/bars/deals#find_deals', :via => :get
   devise_for :users, :controllers => { :omniauth_callbacks => "devise/omniauth_callbacks" }

@@ -1,7 +1,7 @@
 class Bars::DealsController < ApplicationController
   layout 'bars'
 
-  before_filter :authenticate_bar!
+  before_filter :authenticate_bar!, :except => :find_deals
   
   before_filter :populate_default_deals, :only => [:new, :create, :create_from_default_deal, :edit, :update_from_default_deal, :update]
   before_filter :find_deal, :only => [:show, :edit, :update, :destroy, :deal_status, :deal_status_update]
@@ -121,7 +121,11 @@ class Bars::DealsController < ApplicationController
   end
 
   def find_deals
-    @deals =  current_bar.bar_deals.select{|deal1| deal1.deal.day_of_week == params[:day].to_i}
+    if current_bar
+      @deals =  current_bar.bar_deals.select{|deal1| deal1.deal.day_of_week == params[:day].to_i}
+    else
+      @deals =  find_bar.bar_deals.select{|deal1| deal1.deal.day_of_week == params[:day].to_i}
+    end
     respond_to do |format|
       format.js do
         deals = render_to_string(:partial => "/bars/deals/find_deals", :locals => {:deals => @deals}).to_json
@@ -143,6 +147,9 @@ class Bars::DealsController < ApplicationController
 
   def find_deal
     @deal = Deal.find(params[:id])
+  end
+  def find_bar
+    return Bar.find(params[:id])
   end
 
   def load_tipping_points_tiers_and_days_of_week

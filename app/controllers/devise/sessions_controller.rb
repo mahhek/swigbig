@@ -7,9 +7,15 @@ class Devise::SessionsController < ApplicationController
   # GET /resource/sign_in
   def new
     session[:user_type_login] = params[:login]
-    @bar_deals = BarDeal.where(is_active: true)
+    if current_subdomain
+      @bar = Bar.find_by_name(current_subdomain)
+      @bar_deals = BarDeal.where("is_active = ? AND bar_id = ?", true, @bar.id)
+    else
+      @bar_deals = BarDeal.where(is_active: true)
+    end
     @cities = Bar.select("city").all
     @top_ten_swigs = Swig.get_top_ten_swigers
+    Devise.sign_out_all_scopes ? sign_out : sign_out(resource_name)
     if params[:login].eql?("admin")
       respond_to do |format|
         format.js {render :update_admin}
@@ -51,9 +57,9 @@ class Devise::SessionsController < ApplicationController
       set_flash_message(:notice, :signed_in) if is_navigational_format?
       sign_in(resource_name, resource)
       if current_subdomain
-      redirect_to "http://#{request.host}:#{request.port}/bar_details?bar_id=#{resource[:id]}"
+        redirect_to "http://#{request.host}:#{request.port}/bar_details"
       else
-      redirect_to "http://#{resource[:name]}.#{request.host}:#{request.port}/bar_details?bar_id=#{resource[:id]}"
+        redirect_to "http://#{resource[:name]}.#{request.host}:#{request.port}/bar_details"
       end
     end
   end

@@ -20,36 +20,36 @@
     <script src="/javascripts/jquery_002.js" type="text/javascript"></script>
     <script type="text/javascript">
       function update_zip_field(ele){
-      elm = $("#zip_code");
-      val = elm.val();
-      if(val == "Zip Code"){
-      elm.val("");
-      }
-      else if(val == ""){
-      elm.val("Zip Code");
-      }
+        elm = $("#zip_code");
+        val = elm.val();
+        if(val == "Zip Code"){
+          elm.val("");
+        }
+        else if(val == ""){
+          elm.val("Zip Code");
+        }
       }
 
       function getTopTenSwigers() {
-      $.ajax({
-      url: "/swigs/top_ten_swigers",
-      context: document.body
-      });
+        $.ajax({
+          url: "/swigs/top_ten_swigers",
+          context: document.body
+        });
       }
 
       jQuery(function($) {
-      $(document).ready(function() {
-      var updateStatus = jQuery("#new_status_update")
-      updateStatus.bind("ajax:loading", function(){
-      jQuery("#link").hide();
-      jQuery("#sign_loader").show();
-      })
-      updateStatus.bind("ajax:complete", function() {
-      jQuery("#sign_loader").hide();
-      jQuery("#link").show();
-      })
-      setInterval("getTopTenSwigers()", 15000);
-      });
+        $(document).ready(function() {
+          var updateStatus = jQuery("#new_status_update")
+          updateStatus.bind("ajax:loading", function(){
+            jQuery("#link").hide();
+            jQuery("#sign_loader").show();
+          })
+          updateStatus.bind("ajax:complete", function() {
+            jQuery("#sign_loader").hide();
+            jQuery("#link").show();
+          })
+          setInterval("getTopTenSwigers()", 15000);
+        });
       });
     </script>
   </head>
@@ -61,10 +61,13 @@
             <ul class="header_links">
               <li><%= link_to image_tag("/images/logo-default.jpg"), "/" %></li>
               <li style="margin-left: 20PX;margin-top:40px;font-size: 30px;">on<b> <%=Date.today.strftime("%A")%> </b></li>
+              <!--
+  <%#*<li style="margin-left: 20PX;margin-top:40px;font-size: 30px;">on<b> <%=Date.today.in_time_zone('America/Los_Angeles').strftime("%A")%></b></li>%>
+              -->
               <li id="myAccount" class="account">
                 <%= link_to "Welcome back #{current_user.name}", new_user_session_path(:login=>"user"), :remote => true, :onclick => "jQuery('#sign-up-loader').show();jQuery('#sign_in').toggle();" %>
                 <div id="sign_in" style="">
-                  
+
                 </div>
               </li>
   <%#*<li id="myAccount" class="account">%>
@@ -160,10 +163,13 @@
                   <%= form_for :search, :url => "#" do |f| %>
                     <%= select_tag( "city", options_from_collection_for_select(@cities,:city, :city), {:prompt => '-- Select City --', :style => "width:175px;"} )%><br />
 
-                    <div style="border:1px solid;margin-left: 2px;margin-bottom:20px;margin-top:20px;background-color: #c0c0c0;width:160px;float:left;font-weight: bold;text-align: center;">Narrow it Down</div>
+                    <div style="border:1px solid;margin-left: 2px;margin-bottom:20px;margin-top:20px;background-color: #c0c0c0;width:170px;float:left;font-weight: bold;text-align: center;">Narrow it Down</div>
 
-                    <%= text_field_tag "zip_code", "Zip Code", :onfocus => "update_zip_field(this)", :onblur => "update_zip_field(this)",:style => "width:175px;"  %>
-                    <%= f.submit "Search" %>
+                    <%= text_field_tag "zip_code", "Zip Code", :onfocus => "update_zip_field(this)", :onblur => "update_zip_field(this)",:style => "   margin-left: 25px;width: 149px;"  %>
+                    <%= select_tag( "distance", "<option>Within 5 miles</option><option>Within 10 miles</option><option>Within 15 miles</option><option>Within 20 miles</option>".html_safe, {:style => "margin-left: 25px;width: 149px;"} )%><br />
+                    <%= select_tag( "sports_team", "<option>Sports team</option>".html_safe, {:style => "margin-left: 25px;width: 149px;"} )%><br />
+
+  <%#= f.submit "Search" %>
                   <% end %>
 
                 </div>
@@ -187,7 +193,12 @@
                             Y
                           </td>
                           <td style="border:1px solid;">
-                            <%= bar_deal.bar.name%>
+  <%#= bar_deal.bar.name%>
+                            <%if current_subdomain%>
+                              <%= bar_deal.bar.name %>
+                            <%else%>
+                              <%= link_to bar_deal.bar.name, "http://#{bar_deal.bar.name}.#{request.host}:#{request.port}"%>
+                            <%end%>
                           </td>
                           <td style="border:1px solid;">
                             -
@@ -216,13 +227,13 @@
                 </ul>
                 <script type="text/javascript">
                   $(function () {
-                  $('.drink-specials').totemticker({
-                  row_height: '57px',
-                  speed: 400,
-                  interval: 2000,
-                  max_items: 10,
-                  direction: 'down'
-                  });
+                    $('.drink-specials').totemticker({
+                      row_height: '57px',
+                      speed: 400,
+                      interval: 2000,
+                      max_items: 10,
+                      direction: 'down'
+                    });
                   });
                 </script>
               </div>

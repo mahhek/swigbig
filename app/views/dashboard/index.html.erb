@@ -37,13 +37,14 @@
               <% count+= 1 %>
               <tr style="background-color:<%= count%2 == 0 ? '#c0c0c0' : 'white'  %>">
                 <td style="border:1px solid;">
-                  <%=link_to bar_deal.deal.name, "/bar_details?deal_id=#{bar_deal.deal.id}" %>
+                  <%#=link_to bar_deal.deal.name, "/bar_details?deal_id=#{bar_deal.deal.id}" %>
+                  <%= bar_deal.deal.name%>
                 </td>
                 <td style="border:1px solid;">
                   Y
                 </td>
                 <td style="border:1px solid;">
-                  <%=link_to bar_deal.bar.name, "/bar_details?bar_id=#{bar_deal.bar.id}"%>
+                  <%=link_to bar_deal.bar.name, "/show_bar?id=#{bar_deal.bar.id}"%>
                 </td>
                 <td style="border:1px solid;">
                   -
