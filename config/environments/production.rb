@@ -58,8 +58,8 @@ Swigbig::Application.configure do
   # Send deprecation notices to registered listeners
   config.active_support.deprecation = :notify
 
-  config.action_mailer.default_url_options = { :host => 'cold-wind-2815.herokuapp.com' }
-  config.logger = Logger.new("/var/log/apache2/error.log")
+  config.action_mailer.default_url_options = { :host => 'swigbig.com' }
+#  config.logger = Logger.new("/var/log/apache2/error.log")
 
 end
 SubdomainFu.configure do |config|
