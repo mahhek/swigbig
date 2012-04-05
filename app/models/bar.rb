@@ -6,7 +6,7 @@ class Bar < ActiveRecord::Base
 
   acts_as_gmappable :process_geocoding => false
 
-  geocoded_by :address
+#  geocoded_by :address
 
   has_attached_file :logo,
     :path => ":rails_root/app/assets/system/:attachment/:id/:style/:filename",

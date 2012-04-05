@@ -19,7 +19,7 @@ Swigbig::Application.configure do
 
   # Generate digests for assets URLs
   config.assets.digest = true
-#config.cache_store = :dalli_store
+  #config.cache_store = :dalli_store
   # Defaults to Rails.root.join("public/assets")
   # config.assets.manifest = YOUR_PATH
 
@@ -41,6 +41,7 @@ Swigbig::Application.configure do
 
   # Enable serving of images, stylesheets, and JavaScripts from an asset server
   # config.action_controller.asset_host = "http://assets.example.com"
+  config.assets.precompile += %w( *.css *.js )
 
   # Precompile additional assets (application.js, application.css, and all non-JS/CSS are already added)
   # config.assets.precompile += %w( search.js )
@@ -59,13 +60,13 @@ Swigbig::Application.configure do
   config.active_support.deprecation = :notify
 
   config.action_mailer.default_url_options = { :host => 'swigbig.com' }
-#  config.logger = Logger.new("/var/log/apache2/error.log")
+  #  config.logger = Logger.new("/var/log/apache2/error.log")
 
 end
 SubdomainFu.configure do |config|
- config.tld_sizes = {:development => 1,
-                     :test => 0,
-                     :production => 1}
+  config.tld_sizes = {:development => 1,
+    :test => 0,
+    :production => 1}
 end
 ActiveMerchant::Billing::Base.mode = :production
 
