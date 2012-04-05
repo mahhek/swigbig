@@ -59,11 +59,13 @@ Swigbig::Application.configure do
   config.active_support.deprecation = :notify
 
   config.action_mailer.default_url_options = { :host => 'cold-wind-2815.herokuapp.com' }
+  config.logger = Logger.new("/var/log/apache2/error.log")
+
 end
 SubdomainFu.configure do |config|
  config.tld_sizes = {:development => 0,
                      :test => 0,
-                     :production => 2}
+                     :production => 1}
 end
 ActiveMerchant::Billing::Base.mode = :production
 
