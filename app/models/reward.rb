@@ -1,6 +1,6 @@
 class Reward < ActiveRecord::Base
   belongs_to :reward_class
-  belongs_to :deal_type
+  belongs_to :reward_type
   with_options :dependent => :destroy do |reward|
     has_many :bar_rewards
     has_many :user_rewards

@@ -57,9 +57,9 @@ class Devise::SessionsController < ApplicationController
       set_flash_message(:notice, :signed_in) if is_navigational_format?
       sign_in(resource_name, resource)
       if current_subdomain
-        redirect_to "http://#{request.host}/bar_details"
+        redirect_to "http://#{request.host}:#{request.port}/bar_details"
       else
-        redirect_to "http://#{resource[:name]}.#{request.host}/bar_details"
+        redirect_to "http://#{resource[:name]}.#{request.host}:#{request.port}/bar_details"
       end
     end
   end
@@ -73,7 +73,9 @@ class Devise::SessionsController < ApplicationController
     # We actually need to hardcode this, as Rails default responder doesn't
     # support returning empty response on GET request
     respond_to do |format|
-      format.any(*navigational_formats) { redirect_to after_sign_out_path_for(resource_name) }
+      format.any(*navigational_formats) {
+        after_sign_out_path_for(resource_name)
+      }
       format.all do
         method = "to_#{request_format}"
         text = {}.respond_to?(method) ? {}.send(method) : ""

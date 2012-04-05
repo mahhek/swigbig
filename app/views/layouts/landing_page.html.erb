@@ -55,79 +55,47 @@
   </head>
   <body style="background:url('/images/bg.png') repeat-x scroll left top #719818;">
     <div class="wrapper">
-      <%if current_user%>
-        <div id="header">
-          <div class="container">
-            <ul class="header_links">
-              <li><%= link_to image_tag("/images/logo-default.jpg"), "/" %></li>
-              <li style="margin-left: 20PX;margin-top:40px;font-size: 30px;">on<b> <%=Date.today.strftime("%A")%> </b></li>
-              <!--
-  <%#*<li style="margin-left: 20PX;margin-top:40px;font-size: 30px;">on<b> <%=Date.today.in_time_zone('America/Los_Angeles').strftime("%A")%></b></li>%>
-              -->
-              <li id="myAccount" class="account">
-                <%= link_to "Welcome back #{current_user.name}", new_user_session_path(:login=>"user"), :remote => true, :onclick => "jQuery('#sign-up-loader').show();jQuery('#sign_in').toggle();" %>
-                <div id="sign_in" style="">
-
+      <div id="header">
+        <div class="container">
+          <ul class="header_links">
+            <li><%= link_to image_tag("/images/logo-default.jpg"), "/" %></li>
+            <li style="margin-left: 20PX;margin-top:40px;font-size: 30px;">on<b> <%=Date.today.strftime("%A")%> </b></li>
+            <li id="myAccount" class="account">
+              <%= link_to "Login", new_user_session_path(:login=>"user"), :remote => true, :onclick => "jQuery('#sign-up-loader').show();jQuery('#sign_in').toggle();" %>
+              <div id="sign_in" style="">
+                <div id="sign-panel">
+                  <%= yield %>
                 </div>
-              </li>
-  <%#*<li id="myAccount" class="account">%>
-  <%#= link_to_function "Login", "jQuery('#sign_in').toggle();" %>
-  <%#*</li>%>
-              <li id="myAccount" class="account">
-                <%= link_to "Learn more", new_user_registration_path(:login=>"user"), :remote => true, :onclick => "jQuery('#sign_in').toggle();jQuery('#sign-loader').show();" %>
-              </li>
-              <li id="myAccount" class="account">
-                <%= link_to "Notifications", "jQuery('#sign_in').toggle();" %>
-              </li>
-              <li id="myAccount" class="account">
-                <%= link_to "Home", "/" %>
-              </li>
-            </ul>
-          </div>
-        </div>
-      <%else%>
-        <div id="header">
-          <div class="container">
-            <ul class="header_links">
-              <li><%= link_to image_tag("/images/logo-default.jpg"), "/" %></li>
-              <li style="margin-left: 20PX;margin-top:40px;font-size: 30px;">on<b> <%=Date.today.strftime("%A")%> </b></li>
-              <li id="myAccount" class="account">
-                <%= link_to "Login", new_user_session_path(:login=>"user"), :remote => true, :onclick => "jQuery('#sign-up-loader').show();jQuery('#sign_in').toggle();" %>
-                <div id="sign_in" style="">
-                  <div id="sign-panel">
-                    <%= yield %>
-                  </div>
 
-                  <div id="link">
-                    <%= link_to "Sign in Admin", new_admin_session_path(:login=>"admin"), :remote => true, :onclick => "jQuery('#sign-loader').show();" %>
-                    <%= link_to "Sign in Bar", new_bar_session_path(:login=>"bar"), :remote => true, :onclick => "jQuery('#sign-loader').show();" %>
-  <%#= link_to "Sign up User", new_user_registration_path(:login=>"user"), :remote => true, :onclick => "jQuery('#sign-loader').show();" %>
-                  </div>
-
-                  <div id="sign-loader"  style="display: none; position: fixed; margin-left: 207px; margin-top: -240px;">
-                    <%= image_tag "/images/ajax-loader.gif" %>
-                  </div>
-                  <div id="sign-up-loader" style="display: none; position: fixed; margin-left: 207px; margin-top: -180px;">
-                    <%= image_tag "/images/ajax-loader.gif" %>
-                  </div>
+                <div id="link">
+                  <%= link_to "Sign in Admin", new_admin_session_path(:login=>"admin"), :remote => true, :onclick => "jQuery('#sign-loader').show();" %>
+                  <%= link_to "Sign in Bar", new_bar_session_path(:login=>"bar"), :remote => true, :onclick => "jQuery('#sign-loader').show();" %>
+<%#= link_to "Sign up User", new_user_registration_path(:login=>"user"), :remote => true, :onclick => "jQuery('#sign-loader').show();" %>
                 </div>
-              </li>
-  <%#*<li id="myAccount" class="account">%>
-  <%#= link_to_function "Login", "jQuery('#sign_in').toggle();" %>
-  <%#*</li>%>
-              <li id="myAccount" class="account">
-                <%= link_to "Sign up User", new_user_registration_path(:login=>"user"), :remote => true, :onclick => "jQuery('#sign_in').toggle();jQuery('#sign-loader').show();" %>
-              </li>
-              <li id="myAccount" class="account">
-                <%= link_to "Learn more", "#" %>
-              </li>
-              <li id="myAccount" class="account">
-                <%= link_to "Home", "/" %>
-              </li>
-            </ul>
-          </div>
+
+                <div id="sign-loader"  style="display: none; position: fixed; margin-left: 207px; margin-top: -240px;">
+                  <%= image_tag "/images/ajax-loader.gif" %>
+                </div>
+                <div id="sign-up-loader" style="display: none; position: fixed; margin-left: 207px; margin-top: -180px;">
+                  <%= image_tag "/images/ajax-loader.gif" %>
+                </div>
+              </div>
+            </li>
+<%#*<li id="myAccount" class="account">%>
+<%#= link_to_function "Login", "jQuery('#sign_in').toggle();" %>
+<%#*</li>%>
+            <li id="myAccount" class="account">
+              <%= link_to "Sign up User", new_user_registration_path(:login=>"user"), :remote => true, :onclick => "jQuery('#sign_in').toggle();jQuery('#sign-loader').show();" %>
+            </li>
+            <li id="myAccount" class="account">
+              <%= link_to "Learn more", "#" %>
+            </li>
+            <li id="myAccount" class="account">
+              <%= link_to "Home", "/" %>
+            </li>
+          </ul>
         </div>
-      <%end%>
+      </div>
       <div id="all_content">
         <div class="container">
 
@@ -197,7 +165,8 @@
                             <%if current_subdomain%>
                               <%= bar_deal.bar.name %>
                             <%else%>
-                              <%= link_to bar_deal.bar.name, "http://#{bar_deal.bar.name}.#{request.host}:#{request.port}"%>
+    <%#= link_to bar_deal.bar.name, "http://#{bar_deal.bar.name}.#{request.host}:#{request.port}"%>
+                              <%= link_to bar_deal.bar.name, "http://localhost:3000/show_bar?id=1"%>
                             <%end%>
                           </td>
                           <td style="border:1px solid;">

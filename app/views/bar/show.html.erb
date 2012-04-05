@@ -3,9 +3,48 @@
     <h1><%= @bar.name %></h1>
     <div style="float: left; width: 100%;">
       <h3>Bar Information</h3>
+      <div style="float: left; width: 100%;">
+        Name:<%= @bar.name %>
+      </div>
+      <div style="float: left; width: 100%;">
+        Address:<%= @bar.address %>
+
+      </div>
+      <div style="float: left; width: 100%;">
+
+        Phone Number<%= @bar.phone_number%>
+      </div>
+      <div style="float: left; width: 100%;">
+        Website:<%= "website"%>
+
+      </div>
+      <div style="float: left; width: 100%;">
+        Social Media Page:<%= "Social Media page"%>
+
+      </div>
     </div>
     <div style="float: left; width: 100%;">
       <h3>Rewards</h3>
+      <div style="float: left; width: 100%;">
+        <h3>Loyalty</h3>
+        <%@bar.bar_rewards.each do |bar_reward|%>
+          <%if bar_reward.reward.reward_class.name == "Loyalty" %>
+            <div style="float: left; width: 100%;">
+              <%= bar_reward.reward.name %>
+            </div>
+          <%end%>
+        <%end%>
+      </div>
+      <div style="float: left; width: 100%;">
+        <h3> popularity</h3>
+        <%@bar.bar_rewards.each do |bar_reward|%>
+          <%if bar_reward.reward.reward_class.name == "Popularity" %>
+            <div style="float: left; width: 100%;">
+              <%= bar_reward.reward.name %>
+            </div>
+          <%end%>
+        <%end%>
+      </div>
     </div>
   </div>
   <div style="float: left;width: 60%;margin-left: 3%;">

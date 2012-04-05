@@ -5,7 +5,7 @@
     <p style="float: left;width:100%;border: 1px solid black;"><%= link_to "Change Email","#"%></p>
     <p style="float: left;width:100%;border: 1px solid black;"><%= link_to "Change Password","#"%></p>
     <p style="float: left;width:100%;border: 1px solid black;"><%= link_to "Contact Preferences","#"%></p>
-    <p style="float: left;width:100%;border: 1px solid black;"><%= link_to "Delete Account","#"%></p>
+    <p style="float: left;width:100%;border: 1px solid black;"><%= link_to "Cancel my account", registration_path(:user), :confirm => "Are you sure?", :method => :delete %></p>
 
   </div>
   <div style="float: left;width: 60%;margin-left: 3%;">

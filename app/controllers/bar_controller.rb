@@ -1,7 +1,8 @@
 class BarController < ApplicationController
-  before_filter :authenticate_user!, :except => :bar_details
+  before_filter :authenticate_user!, :except => [:bar_details, :show]
   before_filter :bar_sub_domain, :only => :bar_details
-  layout "bars", :only => :bar_details
+#  layout "bars", :only => :bar_details
+  layout "bars"
 
   def favourite_bar
     @favourite_bar = Swig.order("reward_point DESC").first
@@ -10,7 +11,7 @@ class BarController < ApplicationController
 
   def bar_details
     bar_data
-    sign_in(@bar)
+    sign_in(:bar , @bar)
   end
 
   def show

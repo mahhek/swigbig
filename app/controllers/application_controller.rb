@@ -223,5 +223,15 @@ class ApplicationController < ActionController::Base
     @current_logo = Logo.where(active: true).first
     @current_slogan = Slogan.where(active: true).first
   end
+
+  private
+
+  def after_sign_out_path_for(resource_or_scope)
+    if Rails.env == "development"
+      redirect_to "http://localhost:3000"
+    elsif Rails.env == "production"
+      redirect_to "http://swigbig.com"
+    end
+  end
    
 end

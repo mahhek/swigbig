@@ -22,6 +22,7 @@
       <%#= f.label :reward_class_id %><br />
       <%#= f.select :reward_class_id, options_from_collection_for_select(@reward_classes, "id", "name") %>
     <%#*</div>%>
+      <%=hidden_field_tag "reward[reward_class_id]"%>
 
     <div class="actions">
       <%= f.submit %>

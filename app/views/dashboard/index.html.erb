@@ -18,8 +18,10 @@
 
           <div style="border:1px solid;margin-left: 2px;margin-bottom:20px;margin-top:20px;background-color: #c0c0c0;width:160px;float:left;font-weight: bold;text-align: center;">Narrow it Down</div>
 
-          <%= text_field_tag "zip_code", "Zip Code", :onfocus => "update_zip_field(this)", :onblur => "update_zip_field(this)", :style => "width:175px;"  %>
-          <%= f.submit "Search" %>
+          <%= text_field_tag "zip_code", "Zip Code", :onfocus => "update_zip_field(this)", :onblur => "update_zip_field(this)",:style => "   margin-left: 25px;width: 149px;"  %>
+          <%= select_tag( "distance", "<option>Within 5 miles</option><option>Within 10 miles</option><option>Within 15 miles</option><option>Within 20 miles</option>".html_safe, {:style => "margin-left: 25px;width: 149px;"} )%><br />
+          <%= select_tag( "sports_team", "<option>Sports team</option>".html_safe, {:style => "margin-left: 25px;width: 149px;"} )%><br />
+
         <% end %>
 
       </div>
@@ -37,7 +39,7 @@
               <% count+= 1 %>
               <tr style="background-color:<%= count%2 == 0 ? '#c0c0c0' : 'white'  %>">
                 <td style="border:1px solid;">
-                  <%#=link_to bar_deal.deal.name, "/bar_details?deal_id=#{bar_deal.deal.id}" %>
+  <%#=link_to bar_deal.deal.name, "/bar_details?deal_id=#{bar_deal.deal.id}" %>
                   <%= bar_deal.deal.name%>
                 </td>
                 <td style="border:1px solid;">
@@ -73,13 +75,13 @@
       </ul>
       <script type="text/javascript">
         $(function () {
-        $('.drink-specials').totemticker({
-        row_height: '57px',
-        speed: 400,
-        interval: 2000,
-        max_items: 10,
-        direction: 'down'
-        });
+          $('.drink-specials').totemticker({
+            row_height: '57px',
+            speed: 400,
+            interval: 2000,
+            max_items: 10,
+            direction: 'down'
+          });
         });
       </script>
     </div>
