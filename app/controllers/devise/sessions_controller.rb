@@ -57,9 +57,9 @@ class Devise::SessionsController < ApplicationController
       set_flash_message(:notice, :signed_in) if is_navigational_format?
       sign_in(resource_name, resource)
       if current_subdomain
-        redirect_to "http://#{request.host}:#{request.port}/bar_details"
+        redirect_to "http://#{request.host}/bar_details"
       else
-        redirect_to "http://#{resource[:name]}.#{request.host}:#{request.port}/bar_details"
+        redirect_to "http://#{resource[:name]}.#{request.host}/bar_details"
       end
     end
   end
