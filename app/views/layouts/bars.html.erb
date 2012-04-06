@@ -35,8 +35,6 @@
               <li id="myAccount" class="account">
                 <%= link_to "Welcome back #{current_bar.name unless current_bar.nil? and current_bar.name.blank?}","#",:onclick => "jQuery('#user_details').toggle();" %>
                 <div id="user_details" class="user_details">
-                  <%= link_to "Rewards", rewards_user_rewards_path, :id=>"reward", :class=> "#{'active' if session[:button].eql?('reward')}" %>
-                  <%= link_to "My Account", account_path, :id=>"my_account", :class=> "#{'active' if session[:button].eql?('my_account')}" %>
                   <%= link_to "Sign Out", destroy_bar_session_path, :method => :delete %>
                 </div>
               </li>
@@ -120,7 +118,7 @@
               </div>
             </div>
 
-            <div class="main_content">
+            <div class="main_content" style="width: 600px;">
               <div id="map_canvas-container" class="no_notch">
                 <% flash.each do |key, msg| %>
                   <%= content_tag :div, msg, :id => key %>
