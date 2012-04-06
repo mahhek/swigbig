@@ -37,7 +37,7 @@
                 <div id="user_details" class="user_details">
                   <%= link_to "Rewards", rewards_user_rewards_path, :id=>"reward", :class=> "#{'active' if session[:button].eql?('reward')}" %>
                   <%= link_to "My Account", account_path, :id=>"my_account", :class=> "#{'active' if session[:button].eql?('my_account')}" %>
-                  <%= link_to "Sign Out", destroy_user_session_path, :method => :delete %>
+                  <%= link_to "Sign Out", destroy_bar_session_path, :method => :delete %>
                 </div>
               </li>
   <%#*<li id="myAccount" class="account">%>
@@ -50,7 +50,7 @@
                 <%= link_to "Notifications", "#" %>
               </li>
               <li id="myAccount" class="account">
-                <%= link_to "Home", "/bar_details" %>
+                <%= link_to "Home", "/bars" %>
               </li>
             </ul>
           </div>

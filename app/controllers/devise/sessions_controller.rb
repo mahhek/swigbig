@@ -74,7 +74,7 @@ class Devise::SessionsController < ApplicationController
     # support returning empty response on GET request
     respond_to do |format|
       format.any(*navigational_formats) {
-        after_sign_out_path_for(resource_name)
+        redirect_to after_sign_out_path_for(resource_name)
       }
       format.all do
         method = "to_#{request_format}"
