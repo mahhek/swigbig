@@ -61,7 +61,11 @@
             <li><%= link_to image_tag("/images/logo-default.jpg"), "/" %></li>
             <li style="margin-left: 20PX;margin-top:40px;font-size: 30px;">on<b> <%=Date.today.strftime("%A")%> </b></li>
             <li id="myAccount" class="account">
-              <%= link_to "Login", new_user_session_path(:login=>"user"), :remote => true, :onclick => "jQuery('#sign-up-loader').show();jQuery('#sign_in').toggle();" %>
+              <%if current_subdomain and current_subdomain == 'bars' %>
+                <%= link_to "Sign in Bar", new_bar_session_path(:login=>"bar"), :remote => true, :onclick => "jQuery('#sign-loader').show();jQuery('#sign_in').toggle();" %>
+              <%else%>
+                <%= link_to "Login", new_user_session_path(:login=>"user"), :remote => true, :onclick => "jQuery('#sign-up-loader').show();jQuery('#sign_in').toggle();" %>
+              <%end%>
               <div id="sign_in" style="">
                 <div id="sign-panel">
                   <%= yield %>
@@ -69,7 +73,6 @@
 
                 <div id="link">
                   <%= link_to "Sign in Admin", new_admin_session_path(:login=>"admin"), :remote => true, :onclick => "jQuery('#sign-loader').show();" %>
-                  <%= link_to "Sign in Bar", new_bar_session_path(:login=>"bar"), :remote => true, :onclick => "jQuery('#sign-loader').show();" %>
 <%#= link_to "Sign up User", new_user_registration_path(:login=>"user"), :remote => true, :onclick => "jQuery('#sign-loader').show();" %>
                 </div>
 
@@ -85,7 +88,11 @@
 <%#= link_to_function "Login", "jQuery('#sign_in').toggle();" %>
 <%#*</li>%>
             <li id="myAccount" class="account">
-              <%= link_to "Sign up User", new_user_registration_path(:login=>"user"), :remote => true, :onclick => "jQuery('#sign_in').toggle();jQuery('#sign-loader').show();" %>
+              <%if current_subdomain and current_subdomain == 'bars' %>
+                <%= link_to "Sign up Bar", new_bar_registration_path(:login=>"bar"), :remote => true, :onclick => "jQuery('#sign-loader').show();jQuery('#sign_in').toggle();" %>
+              <%else%>
+                <%= link_to "Sign up User", new_user_registration_path(:login=>"user"), :remote => true, :onclick => "jQuery('#sign_in').toggle();jQuery('#sign-loader').show();" %>
+              <%end%>
             </li>
             <li id="myAccount" class="account">
               <%= link_to "Learn more", "#" %>
@@ -166,7 +173,7 @@
                               <%= bar_deal.bar.name %>
                             <%else%>
     <%#= link_to bar_deal.bar.name, "http://#{bar_deal.bar.name}.#{request.host}:#{request.port}"%>
-                              <%= link_to bar_deal.bar.name, "http://localhost:3000/show_bar?id=1"%>
+                              <%= link_to bar_deal.bar.name, "http://localhost:3000/show_bar?id=#{bar_deal.bar.id}"%>
                             <%end%>
                           </td>
                           <td style="border:1px solid;">

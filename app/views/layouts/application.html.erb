@@ -97,7 +97,7 @@
                 <%= link_to "Login", new_user_session_path(:login=>"user"), :remote => true, :onclick => "jQuery('#sign-up-loader').show();jQuery('#sign_in').toggle();" %>
                 <div id="sign_in" style="">
                   <div id="sign-panel">
-                    
+
                   </div>
 
                   <div id="link">
@@ -129,41 +129,42 @@
             </ul>
           </div>
         <%end%>
-        <div id="all_content">
-          <div class="container">
-            <div class="side-column">
-              <div class="sidebar_panel" style="margin-top: 10px;">
-                <%= link_to image_tag("/images/available_on_app_store.png"), "#"  %>
-              </div>
-              <div class="sidebar_panel">
-                <a href="#" onclick="return recordOutboundLink(this, 'Outbound Links', 'android.com');"><img src="/images/available_on_android.png"></a>
-              </div>
-              <div id="filter-drink-types" class="filter-container sidebar_panel" style="padding: 18px; background-image: none;">
-                <h3 style="font-size: 14px;">
-                  The more people swigging, the better the deal</h3>
-              </div>
+      </div>
+      <div id="all_content">
+        <div class="container">
+          <div class="side-column">
+            <div class="sidebar_panel" style="margin-top: 10px;">
+              <%= link_to image_tag("/images/available_on_app_store.png"), "#"  %>
             </div>
-            <%=yield%>
-            <div class="clearfix">
+            <div class="sidebar_panel">
+              <a href="#" onclick="return recordOutboundLink(this, 'Outbound Links', 'android.com');"><img src="/images/available_on_android.png"></a>
+            </div>
+            <div id="filter-drink-types" class="filter-container sidebar_panel" style="padding: 18px; background-image: none;">
+              <h3 style="font-size: 14px;">
+                The more people swigging, the better the deal</h3>
             </div>
           </div>
+          <%=yield%>
+          <div class="clearfix">
+          </div>
         </div>
-        <div class="push"></div>
       </div>
-      <div id="footer">
-        <div class="left">
-          <img src="/images/fb.png" width="50" height="50"/>
-          <img src="/images/twitter.png" width="50" height="50" />
-        </div>
-        <div class="feed">Live Swig Feed: James J. just swigged at Duffy's in Chicago
-        </div>
-        <div class="feed" style="margin-left:325px;">
-          <%= link_to "Copyright", "" %> |
-          <%= link_to "FAQ", "" %> |
-          <%= link_to "About Us", "" %> |
-          <%= link_to "Contact Us", "" %> |
-          <%= link_to "Bar Owner?", "" %>
-        </div>
+      <div class="push"></div>
+    </div>
+    <div id="footer">
+      <div class="left">
+        <img src="/images/fb.png" width="50" height="50"/>
+        <img src="/images/twitter.png" width="50" height="50" />
+      </div>
+      <div class="feed">Live Swig Feed: James J. just swigged at Duffy's in Chicago
+      </div>
+      <div class="feed" style="margin-left:325px;">
+        <%= link_to "Copyright", "" %> |
+        <%= link_to "FAQ", "" %> |
+        <%= link_to "About Us", "" %> |
+        <%= link_to "Contact Us", "" %> |
+        <%= link_to "Bar Owner?", "" %>
+      </div>
 
-      </div>
+    </div>
   </body></html>

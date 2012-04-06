@@ -1,7 +1,7 @@
 class BarController < ApplicationController
   before_filter :authenticate_user!, :except => [:bar_details, :show]
   before_filter :bar_sub_domain, :only => :bar_details
-#  layout "bars", :only => :bar_details
+  #  layout "bars", :only => :bar_details
   layout "bars"
 
   def favourite_bar
@@ -47,10 +47,10 @@ class BarController < ApplicationController
   end
 
   def bar_sub_domain
-    if current_subdomain
-      @bar = Bar.find_by_name(current_subdomain)
-      params[:bar_id] = @bar.id
-    end
+#    if current_subdomain
+#      @bar = Bar.find_by_name(current_subdomain)
+#      params[:bar_id] = @bar.id
+#    end
   end
   
 end

@@ -7,12 +7,12 @@ class Devise::SessionsController < ApplicationController
   # GET /resource/sign_in
   def new
     session[:user_type_login] = params[:login]
-    if current_subdomain
-      @bar = Bar.find_by_name(current_subdomain)
-      @bar_deals = BarDeal.where("is_active = ? AND bar_id = ?", true, @bar.id)
-    else
+#    if current_subdomain
+#      @bar = Bar.find_by_name(current_subdomain)
+#      @bar_deals = BarDeal.where("is_active = ? AND bar_id = ?", true, @bar.id)
+#    else
       @bar_deals = BarDeal.where(is_active: true)
-    end
+#    end
     @cities = Bar.select("city").all
     @top_ten_swigs = Swig.get_top_ten_swigers
     Devise.sign_out_all_scopes ? sign_out : sign_out(resource_name)
@@ -56,11 +56,11 @@ class Devise::SessionsController < ApplicationController
       resource = warden.authenticate!(:scope => resource_name, :recall => "#{controller_path}#new")
       set_flash_message(:notice, :signed_in) if is_navigational_format?
       sign_in(resource_name, resource)
-      if current_subdomain
-        redirect_to "http://#{request.host}:#{request.port}/bar_details"
-      else
-        redirect_to "http://#{resource[:name]}.#{request.host}:#{request.port}/bar_details"
-      end
+#      if current_subdomain
+        redirect_to "/bars"
+#      else
+#        redirect_to "http://#{resource[:name]}.#{request.host}:#{request.port}/bar_details"
+#      end
     end
   end
 
