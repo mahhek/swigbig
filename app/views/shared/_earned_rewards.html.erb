@@ -1,0 +1,12 @@
+<div style="float: left;width: 100%;">
+  <% @earned_rewards.each do |earned_reward| %>
+    <div style="float: left;width: 20%;">
+      Bar Name:<%= show_field_value(earned_reward.swig.bar, "name") if earned_reward.swig %>
+      Date : <%= show_field_value(earned_reward.reward, "created_at") %>
+    </div>
+  <% end %>
+  <div style="width:100%;float: right;">
+    <%= link_to "See all", "#" , :style => "    float: right;
+    margin-right: 10%;"%>
+  </div>
+</div>

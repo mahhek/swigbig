@@ -1,4 +1,4 @@
-<div id="link">
+<div id="link" style="display: block;">
 <!--  <%#= link_to "Sign up User", new_user_registration_path(:login=>"user"), :remote => true, :onclick => "jQuery('#sign_in').show();jQuery('#sign-loader').show();" %></h2>
 <%#*<h2><%= link_to "Sign In User", new_user_session_path(:login=>"user"), :remote => true, :onclick => "jQuery('#sign-up-loader').show();" %></h2>%>
 <%#*<h2><%= link_to "Sign In Bar", new_bar_session_path(:login=>"bar"), :remote => true, :onclick => "jQuery('#sign-up-loader').show();" %></h2>%>
@@ -7,5 +7,9 @@
 <%#= link_to image_tag("/images/twitter-icon.png", :width => 25, :height => 25), user_omniauth_authorize_path("twitter") %>
 <%#= link_to image_tag("/images/google-icon.png", :width => 25, :height => 25), user_omniauth_authorize_path("google", :user_type_login => "bar") %>
 <%#*</div>%> -->
-  <%= link_to image_tag("/images/facebook-icon.png", :width => 25, :height => 25), user_omniauth_authorize_path("facebook") %>
+  <div style="cursor:pointer;width: 100%;float: left;text-align: center;">
+    <%= link_to image_tag("/images/facebook-icon.png", :width => 25, :height => 25), user_omniauth_authorize_path("facebook") %>
+  </div>
+  <div style="width: 100%;float: left;text-align: center;">OR</div>
+  <div onclick="$('#sign-panel').toggle();" style="text-align: center;cursor:pointer;width: 100%;float: left;border: 1px solid black;">Em@il</div>
 </div>

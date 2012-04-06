@@ -2,8 +2,28 @@
   <div style="float: left;width: 20%;">
     <h3><%= current_user.email %></h3>
     <p style="float: left;width:100%;border: 1px solid black;"><%= link_to "Invite Friends","#"  %></p>
-    <p style="float: left;width:100%;border: 1px solid black;"><%= link_to "Change Email","#"%></p>
-    <p style="float: left;width:100%;border: 1px solid black;"><%= link_to "Change Password","#"%></p>
+    <p style="float: left;width:100%;border: 1px solid black;"><%= link_to "Change Email","#", :onclick => "$('#email').toggle();"%></p>
+    <div style="float: left;width:100%;display: none;" id="email">
+      <%= form_for current_user, :url => "/update_user" do |f| %>
+        <%= f.email_field :email, :style => "width:100%;" %>
+        <%= submit_tag "Change" %>
+      <%end%>
+    </div>
+    <p style="float: left;width:100%;border: 1px solid black;"><%= link_to "Change Password","#", :onclick => "$('#password').toggle();"%></p>
+    <div style="float: left;width:100%;display: none;" id="password">
+      <%= form_for current_user, :url => "/update_user" do |f| %>
+        <div><%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
+          <%= f.password_field :password, :style => "width:100%;" %></div>
+
+        <div><%= f.label :password_confirmation %><br />
+          <%= f.password_field :password_confirmation, :style => "width:100%;" %></div>
+
+      <div style="width: 100%;"><%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
+          <%= f.password_field :current_password,:style => "width:100%;" %></div>
+
+        <%= submit_tag "Change" %>
+      <%end%>
+    </div>
     <p style="float: left;width:100%;border: 1px solid black;"><%= link_to "Contact Preferences","#"%></p>
     <p style="float: left;width:100%;border: 1px solid black;"><%= link_to "Cancel my account", registration_path(:user), :confirm => "Are you sure?", :method => :delete %></p>
 
@@ -13,7 +33,7 @@
     <div style="width:100%;border: 1px solid black;">
       <%= render :partial => "shared/user_profile" %>
 
-      <p><%= link_to "Edit", edit_user_registration_path %></p><%=%>
+<!--      <p><%= link_to "Edit", edit_user_registration_path %></p><%=%> -->
     </div>
   </div>
   <div style="float: left;width: 16%;margin-left: 1%;">

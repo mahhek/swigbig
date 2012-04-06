@@ -1,48 +1,74 @@
-<h1>Unclaimed Rewards</h1>
+<!--
+<%#*<h1>Unclaimed Rewards</h1>%>
 
-<table>
-  <tr>
-    <th>Name</th>
-    <th>Description</th>
-    <th>Bar Name</th>
-    <th>Reward Point</th>
-    <th>Total Unclaimed</th>
-    <th></th>
-  </tr>
+<%#*<table>%>
+<%#*<tr>%>
+<%#*<th>Name</th>%>
+<%#*<th>Description</th>%>
+<%#*<th>Bar Name</th>%>
+<%#*<th>Reward Point</th>%>
+<%#*<th>Total Unclaimed</th>%>
+<%#*<th></th>%>
+<%#*</tr>%>
 
-  <% @unclaimed_rewards.each do |unclaimed_reward| %>
-    <tr>
-      <td><%= show_field_value(unclaimed_reward.reward, "name") %></td>
-      <td><%= show_field_value(unclaimed_reward.reward, "description") %></td>
-      <td><%= show_field_value(unclaimed_reward.swig.bar, "name") if unclaimed_reward.swig %></td>
-      <td><%= show_field_value(unclaimed_reward.reward, "reward_point") %></td>
-      <td><%= unclaimed_reward.total - unclaimed_reward.earned %></td>
-      <td><%= link_to 'Show', user_reward_path(unclaimed_reward.id, :claimed => false) %></td>
-    </tr>
-  <% end %>
-</table>
+<%# @unclaimed_rewards.each do |unclaimed_reward| %>
+<%#*<tr>%>
+<%#*<td><%= show_field_value(unclaimed_reward.reward, "name") %></td>%>
+<%#*<td><%= show_field_value(unclaimed_reward.reward, "description") %></td>%>
+<%#*<td><%= show_field_value(unclaimed_reward.swig.bar, "name") if unclaimed_reward.swig %></td>%>
+<%#*<td><%= show_field_value(unclaimed_reward.reward, "reward_point") %></td>%>
+<%#*<td><%= unclaimed_reward.total - unclaimed_reward.earned %></td>%>
+<%#*<td><%= link_to 'Show', user_reward_path(unclaimed_reward.id, :claimed => false) %></td>%>
+<%#*</tr>%>
+<%# end %>
+<%#*</table>%>
 
-<br />
-<h1>Earned Rewards</h1>
+<%#*<br />%>
+<%#*<h1>Earned Rewards</h1>%>
 
-<table>
-  <tr>
-    <th>Name</th>
-    <th>Description</th>
-    <th>Bar Name</th>
-    <th>Reward Point</th>
-    <th>Total Earned</th>
-    <th></th>
-  </tr>
+<%#*<table>%>
+<%#*<tr>%>
+<%#*<th>Name</th>%>
+<%#*<th>Description</th>%>
+<%#*<th>Bar Name</th>%>
+<%#*<th>Reward Point</th>%>
+<%#*<th>Total Earned</th>%>
+<%#*<th></th>%>
+<%#*</tr>%>
 
-  <% @earned_rewards.each do |earned_reward| %>
-    <tr>
-      <td><%= show_field_value(earned_reward.reward, "name") %></td>
-      <td><%= show_field_value(earned_reward.reward, "description") %></td>
-      <td><%= show_field_value(earned_reward.swig.bar, "name") if earned_reward.swig %></td>
-      <td><%= show_field_value(earned_reward.reward, "reward_point") %></td>
-      <td><%= earned_reward.earned %></td>
-      <td><%= link_to 'Show', user_reward_path(earned_reward.id, :claimed => true) %></td>
-    </tr>
-  <% end %>
-</table>
+<%# @earned_rewards.each do |earned_reward| %>
+<%#*<tr>%>
+<%#*<td><%= show_field_value(earned_reward.reward, "name") %></td>%>
+<%#*<td><%= show_field_value(earned_reward.reward, "description") %></td>%>
+<%#*<td><%= show_field_value(earned_reward.swig.bar, "name") if earned_reward.swig %></td>%>
+<%#*<td><%= show_field_value(earned_reward.reward, "reward_point") %></td>%>
+<%#*<td><%= earned_reward.earned %></td>%>
+<%#*<td><%= link_to 'Show', user_reward_path(earned_reward.id, :claimed => true) %></td>%>
+<%#*</tr>%>
+<%# end %>
+<%#*</table>%>
+-->
+
+<div style="float: left;width: 73%;">
+  <div style="float: left;width: 20%;">
+    <h3><%= current_user.email %></h3>
+    <p style="float: left;width:100%;border: 1px solid black;"><%= link_to "Summary","#"  %></p>
+    <p style="float: left;width:100%;border: 1px solid black;"><%= link_to "Progress","#"%></p>
+    <p style="float: left;width:100%;border: 1px solid black;"><%= link_to "Earned Rewards","#"%></p>
+    <p style="float: left;width:100%;border: 1px solid black;"><%= link_to "Redeemed Rewards","#"%></p>
+  </div>
+  <div style="float: left;width: 76%;margin-left: 3%;">
+    <h1>Rewards</h1>
+    <div style="width:100%;border: 1px solid black;">
+      <h3>Recently Earned</h3>
+      <%= render :partial => "shared/earned_rewards" %>
+
+      <h3>Expiring Soon</h3>
+      <%= render :partial => "shared/expiring_soon" %>
+    </div>
+  </div>
+</div>
+
+<%#*<script type="text/javascript">%>
+  <%#*$('.side-column').hide();%>
+<%#*</script>%>

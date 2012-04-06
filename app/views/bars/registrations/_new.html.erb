@@ -1,4 +1,4 @@
-<div id="sign-panel">
+<div id="sign-panel" style="display: none;" >
   <h2>Sign up as Bar</h2>
 
   <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name), :multipart => true) do |f| %>
@@ -9,4 +9,6 @@
     <%= f.submit "Get Swigging", :class=> "button button_small" %>
     <div class="clear"></div>
   <% end %>
+
+     <div onclick="$('#sign-panel').toggle();" style="text-align: center;cursor:pointer;width: 100%;float: right;border: 1px solid black;">Back</div>
 </div>

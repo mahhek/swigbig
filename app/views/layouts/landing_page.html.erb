@@ -89,9 +89,9 @@
 <%#*</li>%>
             <li id="myAccount" class="account">
               <%if current_subdomain and current_subdomain == 'bars' %>
-                <%= link_to "Sign up Bar", new_bar_registration_path(:login=>"bar"), :remote => true, :onclick => "jQuery('#sign-loader').show();jQuery('#sign_in').toggle();" %>
+                <%= link_to "Sign up Bar", new_bar_registration_path(:login=>"bar"), :remote => true, :onclick => "jQuery('#sign-loader').show();jQuery('#sign_in').toggle();$('#link').show();" %>
               <%else%>
-                <%= link_to "Sign up User", new_user_registration_path(:login=>"user"), :remote => true, :onclick => "jQuery('#sign_in').toggle();jQuery('#sign-loader').show();" %>
+                <%= link_to "Sign up User", new_user_registration_path(:login=>"user"), :remote => true, :onclick => "jQuery('#sign_in').toggle();jQuery('#sign-loader').show();$('#link').show();" %>
               <%end%>
             </li>
             <li id="myAccount" class="account">

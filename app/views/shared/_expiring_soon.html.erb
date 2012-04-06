@@ -1,0 +1,8 @@
+<div style="float: left;width: 100%;">
+  <% @unclaimed_rewards.each do |unclaimed_reward| %>
+    <div style="float: left;width: 20%;">
+      Bar Name:<%= show_field_value(earned_reward.swig.bar, "name") if earned_reward.swig %>
+      Date : <%= show_field_value(earned_reward.reward, "created_at") %>
+    </div>
+  <% end %>
+</div>

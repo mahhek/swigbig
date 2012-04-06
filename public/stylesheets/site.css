@@ -54,7 +54,8 @@ table {
 }
 #notice{
     font-weight: bold; 
-    color: #719818;
+/*    color: #719818;*/
+    color: white;
     text-align: center;
 }
 #alert {
@@ -73,7 +74,7 @@ html {
     height: 100%;
 }
 .wrapper {
-    min-height: 49%;
+    min-height: 1%;
     height: auto !important;
     margin: 0 auto -4.2em;
     /*background: #f9f6ef url(/assets/images/bg.jpg) no-repeat center bottom;*//*#F7F3EA*/

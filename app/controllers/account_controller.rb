@@ -9,7 +9,7 @@ class AccountController < ApplicationController
     if @user.update_attributes(params[:user])
       redirect_to account_path, :notice => "Your account successfully updated."
     else
-      render :edit
+      redirect_to account_path
     end
   end
 
